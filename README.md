@@ -1,5 +1,5 @@
 # bloodguard
-A free and easy-going world building game for Windows, Linux and Mac
+A free and easy-going world building game for Windows, Linux and Mac.
 
 This is a Gdevelop project. Open it in your Gdevelop program.
 
