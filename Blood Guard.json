@@ -994,9 +994,9 @@
                 "circles",
                 "Tween",
                 "\"rotate_circles\"",
-                "360",
+                "0",
                 "\"linear\"",
-                "3",
+                "0",
                 "no"
               ]
             }
@@ -1025,57 +1025,6 @@
                 "circles",
                 "Tween",
                 "\"rotate_circles\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetAngle"
-              },
-              "parameters": [
-                "circles",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectAngleTween2"
-              },
-              "parameters": [
-                "circles",
-                "Tween",
-                "\"rotate_circles2\"",
-                "360",
-                "\"linear\"",
-                "3",
-                "no"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Tween::HasFinished"
-              },
-              "parameters": [
-                "circles",
-                "Tween",
-                "\"rotate_circles2\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Tween::RemoveTween"
-              },
-              "parameters": [
-                "circles",
-                "Tween",
-                "\"rotate_circles2\""
               ]
             },
             {
