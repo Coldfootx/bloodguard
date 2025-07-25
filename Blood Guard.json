@@ -201,6 +201,13 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/e96b43b0ca3fd7775d75a702f44cd1b0dfd325e1db317f7cba84efdf572571fe_Roboto-Regular.ttf",
           "name": "Roboto-Regular.ttf"
         }
+      },
+      {
+        "file": "assets/Roboto-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets\\Roboto-Regular.ttf",
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -230,6 +237,9 @@
         },
         {
           "name": "quit_game_button"
+        },
+        {
+          "name": "logo"
         }
       ]
     }
@@ -283,6 +293,11 @@
           "name": "credits_text",
           "type": "string",
           "value": "First and foremost thanks to my friends for all the important guidance!\n\nColored summoning circles in menus by Johndh https://opengameart.org/users/johndh"
+        },
+        {
+          "name": "refresh_credits_text",
+          "type": "boolean",
+          "value": false
         }
       ],
       "instances": [
@@ -970,7 +985,7 @@
           "content": {
             "initialValue": "",
             "placeholder": "Touch to start typing",
-            "fontResourceName": "",
+            "fontResourceName": "assets\\Roboto-Regular.ttf",
             "fontSize": 20,
             "inputType": "text area",
             "textColor": "0;0;0",
@@ -1110,6 +1125,44 @@
                 "\"linear\"",
                 "3",
                 "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "refresh_credits_text",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "refresh_credits_text",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "credits_area",
+                "Text",
+                "=",
+                "credits_text"
               ]
             }
           ]
@@ -1329,13 +1382,12 @@
             },
             {
               "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                "value": "SetBooleanVariable"
               },
               "parameters": [
-                "credits_area",
-                "Text",
-                "=",
-                "credits_text"
+                "refresh_credits_text",
+                "True",
+                ""
               ]
             }
           ]
@@ -11510,16 +11562,40 @@
       }
     },
     {
-      "associatedLayout": "",
+      "associatedLayout": "main_menu",
       "name": "save_game",
       "instances": [],
-      "editionSettings": {}
+      "editionSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5,
+        "windowMask": false
+      }
     },
     {
-      "associatedLayout": "",
+      "associatedLayout": "main_menu",
       "name": "load_game",
       "instances": [],
-      "editionSettings": {}
+      "editionSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5,
+        "windowMask": false
+      }
     },
     {
       "associatedLayout": "main_menu",
@@ -11549,14 +11625,24 @@
           "depth": 0,
           "height": 500,
           "layer": "",
+          "locked": true,
           "name": "credits_area",
           "persistentUuid": "74a1aede-9688-49b1-9b5a-4ce6f37814ab",
-          "width": 500,
-          "x": 450,
+          "width": 600,
+          "x": 400,
           "y": 100,
           "zOrder": 1,
           "numberProperties": [],
-          "stringProperties": [],
+          "stringProperties": [
+            {
+              "name": "initialValue",
+              "value": "Credits"
+            },
+            {
+              "name": "placeholder",
+              "value": "a"
+            }
+          ],
           "initialVariables": []
         }
       ],
