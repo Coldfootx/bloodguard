@@ -371,11 +371,100 @@
           "layer": "",
           "locked": true,
           "name": "new_game_button",
-          "persistentUuid": "b419b967-4fe5-45bf-aa7c-495f13093302",
+          "persistentUuid": "f9bcf92d-bdbf-4571-a9b4-9c7aca2be192",
           "width": 400,
           "x": 500,
-          "y": 244,
+          "y": 190,
           "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "save_game_button",
+          "persistentUuid": "f43416db-1436-461d-a0ea-925a6321bd47",
+          "width": 400,
+          "x": 500,
+          "y": 279,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "load_game_button",
+          "persistentUuid": "84e742f7-60f0-4e76-ade8-0c9d78cda6cd",
+          "width": 400,
+          "x": 500,
+          "y": 368,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "options_button",
+          "persistentUuid": "a68c871e-c0eb-4b6c-b6c1-1437fb9fc15a",
+          "width": 400,
+          "x": 500,
+          "y": 457,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "name": "credits_button",
+          "persistentUuid": "38e61ab5-fe71-482d-a0c8-746ea72ee243",
+          "width": 400,
+          "x": 500,
+          "y": 546,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "quit_game_button",
+          "persistentUuid": "90d7064c-2500-46d9-8840-b9bad1617f5d",
+          "width": 400,
+          "x": 500,
+          "y": 635,
+          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -748,7 +837,97 @@
             "BottomPadding": 0,
             "TopPadding": 0,
             "HoveredFadeOutDuration": 0.2,
-            "LabelText": ""
+            "LabelText": "New Game"
+          }
+        },
+        {
+          "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+          "name": "save_game_button",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Red Button With Gold Frame",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 0,
+            "RightPadding": 0,
+            "PressedLabelOffsetY": 2,
+            "BottomPadding": 0,
+            "TopPadding": 0,
+            "HoveredFadeOutDuration": 0.2,
+            "LabelText": "Save Game"
+          }
+        },
+        {
+          "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+          "name": "load_game_button",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Red Button With Gold Frame",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 0,
+            "RightPadding": 0,
+            "PressedLabelOffsetY": 2,
+            "BottomPadding": 0,
+            "TopPadding": 0,
+            "HoveredFadeOutDuration": 0.2,
+            "LabelText": "Load Game"
+          }
+        },
+        {
+          "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+          "name": "options_button",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Red Button With Gold Frame",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 0,
+            "RightPadding": 0,
+            "PressedLabelOffsetY": 2,
+            "BottomPadding": 0,
+            "TopPadding": 0,
+            "HoveredFadeOutDuration": 0.2,
+            "LabelText": "Options"
+          }
+        },
+        {
+          "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+          "name": "credits_button",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Red Button With Gold Frame",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 0,
+            "RightPadding": 0,
+            "PressedLabelOffsetY": 2,
+            "BottomPadding": 0,
+            "TopPadding": 0,
+            "HoveredFadeOutDuration": 0.2,
+            "LabelText": "Credits"
+          }
+        },
+        {
+          "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+          "name": "quit_game_button",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Red Button With Gold Frame",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 0,
+            "RightPadding": 0,
+            "PressedLabelOffsetY": 2,
+            "BottomPadding": 0,
+            "TopPadding": 0,
+            "HoveredFadeOutDuration": 0.2,
+            "LabelText": "Quit Game"
           }
         }
       ],
@@ -775,6 +954,21 @@
           },
           {
             "objectName": "new_game_button"
+          },
+          {
+            "objectName": "save_game_button"
+          },
+          {
+            "objectName": "load_game_button"
+          },
+          {
+            "objectName": "options_button"
+          },
+          {
+            "objectName": "credits_button"
+          },
+          {
+            "objectName": "quit_game_button"
           }
         ]
       },
