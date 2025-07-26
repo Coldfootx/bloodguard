@@ -338,6 +338,53 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/3bd40ac788d44626fd640ec67ef04ab0364816b5e8c831f2077bff8805cfe689_Roboto-Bold.ttf",
           "name": "Roboto-Bold.ttf"
         }
+      },
+      {
+        "file": "assets/Orange Bubble Button_Hovered.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Orange Bubble Button_Hovered.png",
+        "smoothed": false,
+        "userAdded": true,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/c7108719eeb51696e6b9bcca1280e5403f7867491f3b02101f759d0e55b112fe_Orange Bubble Button_Hovered.png",
+          "name": "Orange Bubble Button_Hovered.png"
+        }
+      },
+      {
+        "file": "assets/Orange Bubble Button_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Orange Bubble Button_Idle.png",
+        "smoothed": false,
+        "userAdded": true,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/c97e04689076f4c138d10a0dde322d982b332595bce0fe8007ce14bb7a22af21_Orange Bubble Button_Idle.png",
+          "name": "Orange Bubble Button_Idle.png"
+        }
+      },
+      {
+        "file": "assets/Orange Bubble Button_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Orange Bubble Button_Pressed.png",
+        "smoothed": false,
+        "userAdded": true,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/4c35e1cf340a1121bb63e0d0ef834876be8b9427c5a30bafb2e043640d27aab4_Orange Bubble Button_Pressed.png",
+          "name": "Orange Bubble Button_Pressed.png"
+        }
+      },
+      {
+        "file": "assets/Poppins-Medium.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "Poppins-Medium.ttf",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/b81b0bcafdd4279f3bf8d4d3865f51b9961292dad8b5ccbe88807c8acfb6b11d_Poppins-Medium.ttf",
+          "name": "Poppins-Medium.ttf"
+        }
       }
     ],
     "resourceFolders": []
@@ -384,7 +431,10 @@
           "name": "help_text"
         },
         {
-          "name": "load_save_button"
+          "name": "save_load_button"
+        },
+        {
+          "name": "save_load_name"
         }
       ]
     }
@@ -458,22 +508,62 @@
         {
           "name": "refresh_credits_text",
           "type": "boolean",
-          "value": false
+          "value": true
         },
         {
-          "name": "temp1",
-          "type": "number",
-          "value": 0
-        },
-        {
-          "name": "load_save_button_width",
+          "name": "save_load_name_width",
           "type": "number",
           "value": 400
         },
         {
-          "name": "load_save_button_height",
+          "name": "save_load_name_height",
           "type": "number",
           "value": 70
+        },
+        {
+          "name": "temp_number1",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "save_load_button_width",
+          "type": "number",
+          "value": 400
+        },
+        {
+          "name": "save_load_button_height",
+          "type": "number",
+          "value": 70
+        },
+        {
+          "name": "save_names",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "load_names",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "slot_amount",
+          "type": "number",
+          "value": 9
+        },
+        {
+          "name": "temp_string1",
+          "type": "string",
+          "value": "0"
+        },
+        {
+          "name": "save_confirm_x_prefix",
+          "type": "number",
+          "value": 500
+        },
+        {
+          "name": "current_id",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -1136,7 +1226,7 @@
         },
         {
           "assetStoreId": "26f7912e497fefccd32817a0c24533c9304633b47c6e556065dc498219877e81",
-          "name": "load_save_button",
+          "name": "save_load_button",
           "type": "PanelSpriteButton::PanelSpriteButton",
           "variant": "On Screen Controls Button",
           "variables": [
@@ -1144,6 +1234,11 @@
               "name": "id",
               "type": "number",
               "value": 0
+            },
+            {
+              "name": "load",
+              "type": "boolean",
+              "value": true
             }
           ],
           "effects": [],
@@ -1156,6 +1251,68 @@
             "TopPadding": 0,
             "HoveredFadeOutDuration": 0.2,
             "LabelText": "Button"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "save_load_name",
+          "type": "TextInput::TextInputObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "initialValue": "",
+            "placeholder": "Touch to start typing",
+            "fontResourceName": "assets\\Roboto-Regular.ttf",
+            "fontSize": 24,
+            "inputType": "text",
+            "textColor": "0;0;0",
+            "fillColor": "255;255;255",
+            "fillOpacity": 255,
+            "borderColor": "0;0;0",
+            "borderOpacity": 255,
+            "borderWidth": 1,
+            "readOnly": false,
+            "disabled": false,
+            "spellCheck": false,
+            "paddingX": 2,
+            "paddingY": 1,
+            "textAlign": "left",
+            "maxLength": 0
+          }
+        },
+        {
+          "assetStoreId": "72c8adcfb9187ebb5fcfbcd75bc18c74d6af5507e7c482cadcfad28f8011b387",
+          "name": "save_load_name_save_confirm",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Orange Bubble Button",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "BottomPadding": 0,
+            "TopPadding": 0,
+            "LeftPadding": 10,
+            "RightPadding": 10,
+            "PressedLabelOffsetY": 2,
+            "LabelText": "Save"
+          }
+        },
+        {
+          "assetStoreId": "72c8adcfb9187ebb5fcfbcd75bc18c74d6af5507e7c482cadcfad28f8011b387",
+          "name": "save_load_name_save_cancel",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Orange Bubble Button",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "BottomPadding": 0,
+            "TopPadding": 0,
+            "LeftPadding": 10,
+            "RightPadding": 10,
+            "PressedLabelOffsetY": 2,
+            "LabelText": "Cancel"
           }
         }
       ],
@@ -1211,7 +1368,16 @@
             "objectName": "help_text"
           },
           {
-            "objectName": "load_save_button"
+            "objectName": "save_load_button"
+          },
+          {
+            "objectName": "save_load_name"
+          },
+          {
+            "objectName": "save_load_name_save_confirm"
+          },
+          {
+            "objectName": "save_load_name_save_cancel"
           }
         ]
       },
@@ -1441,7 +1607,7 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "temp1",
+                    "temp_number1",
                     "=",
                     "0"
                   ]
@@ -1450,7 +1616,7 @@
             },
             {
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "9",
+              "repeatExpression": "slot_amount",
               "conditions": [],
               "actions": [
                 {
@@ -1458,9 +1624,9 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "temp1",
+                    "temp_number1",
                     "=",
-                    "temp1+1"
+                    "temp_number1 + 1"
                   ]
                 },
                 {
@@ -1469,9 +1635,9 @@
                   },
                   "parameters": [
                     "",
-                    "load_save_button",
-                    "window_width/2-load_save_button_width/2",
-                    "0+(temp1-1)*load_save_button_height",
+                    "save_load_button",
+                    "window_width / 2 - save_load_button_width / 2",
+                    "0 + (temp_number1 - 1) * save_load_button_height",
                     ""
                   ]
                 },
@@ -1480,10 +1646,10 @@
                     "value": "ResizableCapability::ResizableBehavior::SetWidth"
                   },
                   "parameters": [
-                    "load_save_button",
+                    "save_load_button",
                     "Resizable",
                     "=",
-                    "load_save_button_width"
+                    "save_load_button_width"
                   ]
                 },
                 {
@@ -1491,10 +1657,10 @@
                     "value": "ResizableCapability::ResizableBehavior::SetHeight"
                   },
                   "parameters": [
-                    "load_save_button",
+                    "save_load_button",
                     "Resizable",
                     "=",
-                    "load_save_button_height"
+                    "save_load_button_height"
                   ]
                 },
                 {
@@ -1502,9 +1668,9 @@
                     "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
                   },
                   "parameters": [
-                    "load_save_button",
+                    "save_load_button",
                     "=",
-                    "\"Save slot \"+ToString(temp1)",
+                    "\"Save slot \" + ToString(temp_number1)",
                     ""
                   ]
                 },
@@ -1513,21 +1679,21 @@
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
-                    "load_save_button",
+                    "save_load_button",
                     "id",
                     "=",
-                    "temp1"
+                    "temp_number1"
                   ]
                 },
                 {
                   "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                    "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
-                    "",
-                    "load_save_button",
-                    "load_save_button",
-                    ""
+                    "save_load_button",
+                    "load",
+                    "False",
+                    "temp_number1"
                   ]
                 }
               ]
@@ -1586,7 +1752,7 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "temp1",
+                    "temp_number1",
                     "=",
                     "0"
                   ]
@@ -1595,7 +1761,7 @@
             },
             {
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "9",
+              "repeatExpression": "slot_amount",
               "conditions": [],
               "actions": [
                 {
@@ -1603,9 +1769,9 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "temp1",
+                    "temp_number1",
                     "=",
-                    "temp1+1"
+                    "temp_number1 + 1"
                   ]
                 },
                 {
@@ -1614,9 +1780,9 @@
                   },
                   "parameters": [
                     "",
-                    "load_save_button",
-                    "window_width/2-load_save_button_width/2",
-                    "0+(temp1-1)*load_save_button_height",
+                    "save_load_button",
+                    "window_width / 2 - save_load_button_width / 2",
+                    "0 + (temp_number1 - 1) * save_load_button_height",
                     ""
                   ]
                 },
@@ -1625,10 +1791,10 @@
                     "value": "ResizableCapability::ResizableBehavior::SetWidth"
                   },
                   "parameters": [
-                    "load_save_button",
+                    "save_load_button",
                     "Resizable",
                     "=",
-                    "load_save_button_width"
+                    "save_load_button_width"
                   ]
                 },
                 {
@@ -1636,10 +1802,10 @@
                     "value": "ResizableCapability::ResizableBehavior::SetHeight"
                   },
                   "parameters": [
-                    "load_save_button",
+                    "save_load_button",
                     "Resizable",
                     "=",
-                    "load_save_button_height"
+                    "save_load_button_height"
                   ]
                 },
                 {
@@ -1647,9 +1813,9 @@
                     "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
                   },
                   "parameters": [
-                    "load_save_button",
+                    "save_load_button",
                     "=",
-                    "\"Load slot \"+ToString(temp1)",
+                    "\"Load slot \" + ToString(temp_number1)",
                     ""
                   ]
                 },
@@ -1658,21 +1824,21 @@
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
-                    "load_save_button",
+                    "save_load_button",
                     "id",
                     "=",
-                    "temp1"
+                    "temp_number1"
                   ]
                 },
                 {
                   "type": {
-                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                    "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
-                    "",
-                    "load_save_button",
-                    "load_save_button",
-                    ""
+                    "save_load_button",
+                    "load",
+                    "True",
+                    "temp_number1"
                   ]
                 }
               ]
@@ -1681,6 +1847,396 @@
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": []
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "save_load_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "current_id",
+                "=",
+                "save_load_button.id"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "save_load_button",
+                    "load",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name_save_confirm",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name_save_cancel",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "save_load_button",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "id",
+                        "=",
+                        "current_id"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "save_load_name",
+                        "save_confirm_x_prefix-1",
+                        "save_load_button.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                      },
+                      "parameters": [
+                        "save_load_name",
+                        "Resizable",
+                        "=",
+                        "save_load_name_width+1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                      },
+                      "parameters": [
+                        "save_load_name",
+                        "Resizable",
+                        "=",
+                        "save_load_name_height"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "save_load_name_save_confirm",
+                        "save_confirm_x_prefix+save_load_name_width",
+                        "save_load_button.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                      },
+                      "parameters": [
+                        "save_load_name_save_confirm",
+                        "Resizable",
+                        "=",
+                        "250"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                      },
+                      "parameters": [
+                        "save_load_name_save_confirm",
+                        "Resizable",
+                        "=",
+                        "save_load_name_height"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "save_load_name_save_cancel",
+                        "save_confirm_x_prefix + save_load_name_width + save_load_name_save_confirm.Width()",
+                        "save_load_button.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                      },
+                      "parameters": [
+                        "save_load_name_save_cancel",
+                        "Resizable",
+                        "=",
+                        "250"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                      },
+                      "parameters": [
+                        "save_load_name_save_cancel",
+                        "Resizable",
+                        "=",
+                        "save_load_name_height"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "save_load_button",
+                    "load",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PopUp::Confirm"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Lose unsaved progress and load from the selected slot \"+ToString(current_id)+\"?\"",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PopUp::ConfimationResponse"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Quit"
+                      },
+                      "parameters": [
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "save_load_name_save_cancel",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "save_load_name",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "save_load_name_save_confirm",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "save_load_name_save_cancel",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "save_load_name_save_confirm",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "save_load_name",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "save_load_name_save_confirm",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "save_load_name_save_cancel",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PopUp::Confirm"
+              },
+              "parameters": [
+                "",
+                "\"Format and save to the selected slot \"+ToString(current_id)+\"?\"",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PopUp::ConfimationResponse"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Quit"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -12590,6 +13146,275 @@
                   "initialVariables": []
                 }
               ]
+            },
+            {
+              "areaMaxX": 256,
+              "areaMaxY": 128,
+              "areaMaxZ": 64,
+              "areaMinX": 0,
+              "areaMinY": 0,
+              "areaMinZ": 0,
+              "assetStoreAssetId": "72c8adcfb9187ebb5fcfbcd75bc18c74d6af5507e7c482cadcfad28f8011b387",
+              "assetStoreOriginalName": "Orange Bubble Button",
+              "name": "Orange Bubble Button",
+              "objects": [
+                {
+                  "assetStoreId": "",
+                  "bold": false,
+                  "italic": false,
+                  "name": "Label",
+                  "smoothed": true,
+                  "type": "TextObject::Text",
+                  "underlined": false,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    }
+                  ],
+                  "string": "Button",
+                  "font": "Poppins-Medium.ttf",
+                  "textAlignment": "center",
+                  "characterSize": 60,
+                  "color": {
+                    "b": 0,
+                    "g": 42,
+                    "r": 117
+                  },
+                  "content": {
+                    "bold": false,
+                    "isOutlineEnabled": false,
+                    "isShadowEnabled": false,
+                    "italic": false,
+                    "outlineColor": "255;255;255",
+                    "outlineThickness": 2,
+                    "shadowAngle": 90,
+                    "shadowBlurRadius": 2,
+                    "shadowColor": "0;0;0",
+                    "shadowDistance": 4,
+                    "shadowOpacity": 127,
+                    "smoothed": true,
+                    "underlined": false,
+                    "text": "Button",
+                    "font": "Poppins-Medium.ttf",
+                    "textAlignment": "center",
+                    "verticalTextAlignment": "center",
+                    "characterSize": 60,
+                    "color": "117;42;0"
+                  }
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 35,
+                  "height": 128,
+                  "leftMargin": 56,
+                  "name": "Idle",
+                  "rightMargin": 35,
+                  "texture": "Orange Bubble Button_Idle.png",
+                  "tiled": false,
+                  "topMargin": 35,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 256,
+                  "variables": [
+                    {
+                      "folded": true,
+                      "name": "State",
+                      "type": "string",
+                      "value": "Idle"
+                    }
+                  ],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    },
+                    {
+                      "name": "ButtonFSM",
+                      "type": "PanelSpriteButton::ButtonFSM",
+                      "serializedBehavior": {
+                        "name": "ButtonFSM",
+                        "type": "PanelSpriteButton::ButtonFSM",
+                        "ShouldCheckHovering": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 35,
+                  "height": 128,
+                  "leftMargin": 56,
+                  "name": "Hovered",
+                  "rightMargin": 35,
+                  "texture": "Orange Bubble Button_Hovered.png",
+                  "tiled": false,
+                  "topMargin": 35,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 256,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    },
+                    {
+                      "name": "Tween",
+                      "type": "Tween::TweenBehavior",
+                      "serializedBehavior": {
+                        "name": "Tween",
+                        "type": "Tween::TweenBehavior"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 35,
+                  "height": 128,
+                  "leftMargin": 35,
+                  "name": "Pressed",
+                  "rightMargin": 35,
+                  "texture": "Orange Bubble Button_Pressed.png",
+                  "tiled": false,
+                  "topMargin": 35,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 256,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    }
+                  ]
+                }
+              ],
+              "objectsFolderStructure": {
+                "folderName": "__ROOT",
+                "children": [
+                  {
+                    "objectName": "Label"
+                  },
+                  {
+                    "objectName": "Idle"
+                  },
+                  {
+                    "objectName": "Hovered"
+                  },
+                  {
+                    "objectName": "Pressed"
+                  }
+                ]
+              },
+              "objectsGroups": [
+                {
+                  "name": "Background",
+                  "objects": [
+                    {
+                      "name": "Idle"
+                    },
+                    {
+                      "name": "Hovered"
+                    },
+                    {
+                      "name": "Pressed"
+                    }
+                  ]
+                }
+              ],
+              "layers": [
+                {
+                  "ambientLightColorB": 200,
+                  "ambientLightColorG": 200,
+                  "ambientLightColorR": 200,
+                  "camera3DFarPlaneDistance": 10000,
+                  "camera3DFieldOfView": 45,
+                  "camera3DNearPlaneDistance": 3,
+                  "cameraType": "",
+                  "followBaseLayerCamera": false,
+                  "isLightingLayer": false,
+                  "isLocked": false,
+                  "name": "",
+                  "renderingType": "",
+                  "visibility": true,
+                  "cameras": [
+                    {
+                      "defaultSize": true,
+                      "defaultViewport": true,
+                      "height": 0,
+                      "viewportBottom": 1,
+                      "viewportLeft": 0,
+                      "viewportRight": 1,
+                      "viewportTop": 0,
+                      "width": 0
+                    }
+                  ],
+                  "effects": []
+                }
+              ],
+              "instances": [
+                {
+                  "angle": 0,
+                  "customSize": false,
+                  "depth": 1,
+                  "height": 64,
+                  "layer": "",
+                  "name": "Idle",
+                  "persistentUuid": "24882334-eec8-403e-8bf1-70fc928a46e6",
+                  "width": 64,
+                  "x": 0,
+                  "y": 0,
+                  "zOrder": 1,
+                  "numberProperties": [],
+                  "stringProperties": [],
+                  "initialVariables": []
+                },
+                {
+                  "angle": 0,
+                  "customSize": true,
+                  "depth": 1,
+                  "height": 110,
+                  "keepRatio": true,
+                  "layer": "",
+                  "name": "Label",
+                  "persistentUuid": "8aabdbe2-ad4d-4746-839b-9f769bc07c5e",
+                  "width": 238,
+                  "x": 9,
+                  "y": 64,
+                  "zOrder": 2,
+                  "numberProperties": [],
+                  "stringProperties": [],
+                  "initialVariables": []
+                }
+              ]
             }
           ]
         }
@@ -12952,28 +13777,6 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 133,
-          "height": 50,
-          "layer": "",
-          "name": "load_save_button",
-          "persistentUuid": "aa6e0d2b-a234-4c04-b766-75306f2a4ecb",
-          "width": 500,
-          "x": 637,
-          "y": -166,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "id",
-              "type": "number",
-              "value": 0
-            }
-          ]
         }
       ],
       "editionSettings": {
