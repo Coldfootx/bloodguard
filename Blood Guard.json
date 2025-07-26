@@ -13,9 +13,9 @@
     "folderProject": false,
     "orientation": "landscape",
     "packageName": "com.example.gamename",
-    "pixelsRounding": true,
+    "pixelsRounding": false,
     "projectUuid": "ec82d6c3-8e42-4734-a7e9-b224153f0845",
-    "scaleMode": "nearest",
+    "scaleMode": "linear",
     "sizeOnStartupMode": "",
     "templateSlug": "",
     "version": "1.0.0",
@@ -483,7 +483,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.4789341884535245,
+        "zoomFactor": 0.4633111824513976,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1528,60 +1528,6 @@
           "conditions": [
             {
               "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "refresh_save_game_text_field",
-                "True",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ChangeLayer"
-              },
-              "parameters": [
-                "save_load_name",
-                "\"dialog_layer\""
-              ]
-            },
-            {
-              "type": {
-                "value": "ChangePlan"
-              },
-              "parameters": [
-                "save_load_name",
-                "=",
-                "10011"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextInput::TextInputObject::Focus"
-              },
-              "parameters": [
-                "save_load_name"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "refresh_save_game_text_field",
-                "False",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
                 "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
               },
               "parameters": [
@@ -2006,6 +1952,12 @@
                         "=",
                         "current_id"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
                     }
                   ],
                   "actions": [
@@ -2109,43 +2061,6 @@
                         "Resizable",
                         "=",
                         "save_load_name_height"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "refresh_save_game_text_field",
-                        "True",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "ChangeLayer"
-                      },
-                      "parameters": [
-                        "save_load_name",
-                        "\"dialog_layer\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "ChangePlan"
-                      },
-                      "parameters": [
-                        "save_load_name",
-                        "=",
-                        "10011"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "TextInput::TextInputObject::Focus"
-                      },
-                      "parameters": [
-                        "save_load_name"
                       ]
                     }
                   ]
@@ -2663,59 +2578,6 @@
               "width": 0
             }
           ],
-          "effects": [
-            {
-              "effectType": "Scene3D::HemisphereLight",
-              "name": "3D Ambient Hemisphere Light",
-              "doubleParameters": {
-                "elevation": 40,
-                "intensity": 0.33,
-                "rotation": 300
-              },
-              "stringParameters": {
-                "groundColor": "127;127;127",
-                "skyColor": "255;255;255",
-                "top": "Z+"
-              },
-              "booleanParameters": {}
-            },
-            {
-              "effectType": "Scene3D::DirectionalLight",
-              "name": "3D Sun Light",
-              "doubleParameters": {
-                "distanceFromCamera": 1500,
-                "elevation": 40,
-                "frustumSize": 4000,
-                "intensity": 0.75,
-                "minimumShadowBias": 0,
-                "rotation": 300
-              },
-              "stringParameters": {
-                "color": "255;255;255",
-                "shadowQuality": "medium",
-                "top": "Z+"
-              },
-              "booleanParameters": {
-                "isCastingShadow": true
-              }
-            }
-          ]
-        },
-        {
-          "ambientLightColorB": 200,
-          "ambientLightColorG": 200,
-          "ambientLightColorR": 200,
-          "camera3DFarPlaneDistance": 10000,
-          "camera3DFieldOfView": 45,
-          "camera3DNearPlaneDistance": 3,
-          "cameraType": "",
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "isLocked": false,
-          "name": "dialog_layer",
-          "renderingType": "",
-          "visibility": true,
-          "cameras": [],
           "effects": [
             {
               "effectType": "Scene3D::HemisphereLight",
