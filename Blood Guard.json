@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 237,
+    "build": 238,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -208,6 +208,89 @@
         "metadata": "",
         "name": "assets\\Roboto-Regular.ttf",
         "userAdded": false
+      },
+      {
+        "file": "assets/Green Button With Stone Frame_Hovered.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Green Button With Stone Frame_Hovered.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/a835b9f7fa283fad672fb8607fae99c67b44cb853e81b878926ed7804816be23_Green Button With Stone Frame_Hovered.png",
+          "name": "Green Button With Stone Frame_Hovered.png"
+        }
+      },
+      {
+        "file": "assets/Green Button With Stone Frame_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Green Button With Stone Frame_Idle.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/d13ac936a5ce1b628ec20f6031582f6fce805d090e77e5e05d27344bac08ba98_Green Button With Stone Frame_Idle.png",
+          "name": "Green Button With Stone Frame_Idle.png"
+        }
+      },
+      {
+        "file": "assets/Green Button With Stone Frame_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Green Button With Stone Frame_Pressed.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/8921367f00ac169c0565935cbcaed36d5f383f7d3c4e819fbd7384a89dae1d43_Green Button With Stone Frame_Pressed.png",
+          "name": "Green Button With Stone Frame_Pressed.png"
+        }
+      },
+      {
+        "file": "assets/Medieval Button Brown_Hovered.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Medieval Button Brown_Hovered.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/f050eea8c9631c6b163779937225dd43bb432edf6b66dbaf64413e005ce5fbed_Medieval Button Brown_Hovered.png",
+          "name": "Medieval Button Brown_Hovered.png"
+        }
+      },
+      {
+        "file": "assets/Medieval Button Brown_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Medieval Button Brown_Idle.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/236403e4a45a3c7435d21f15ebcf3ab54b83e7389964d6999b0f82a3a957056a_Medieval Button Brown_Idle.png",
+          "name": "Medieval Button Brown_Idle.png"
+        }
+      },
+      {
+        "file": "assets/Medieval Button Brown_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Medieval Button Brown_Pressed.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/d9240cf31b0e332a890cdbe7658eef81c587545df6673b86565c9141a23bc195_Medieval Button Brown_Pressed.png",
+          "name": "Medieval Button Brown_Pressed.png"
+        }
+      },
+      {
+        "file": "assets/CaveatBrush-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "CaveatBrush-Regular.ttf",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/3d58de3ba4305c72907c2b4367cf859232313400b5c22da139d35b13d2273d40_CaveatBrush-Regular.ttf",
+          "name": "CaveatBrush-Regular.ttf"
+        }
       }
     ],
     "resourceFolders": []
@@ -240,6 +323,18 @@
         },
         {
           "name": "logo"
+        },
+        {
+          "name": "help_button"
+        },
+        {
+          "name": "credits_area"
+        },
+        {
+          "name": "back_button"
+        },
+        {
+          "name": "help_text"
         }
       ]
     }
@@ -301,22 +396,6 @@
         }
       ],
       "instances": [
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "logo",
-          "persistentUuid": "87b65198-5170-47a7-a5e3-57a1bd0c877f",
-          "width": 0,
-          "x": 349,
-          "y": 0,
-          "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
         {
           "angle": 0,
           "customSize": true,
@@ -403,113 +482,6 @@
           "x": 0,
           "y": 0,
           "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 88.88888888888889,
-          "height": 88.88888888888889,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "new_game_button",
-          "persistentUuid": "f9bcf92d-bdbf-4571-a9b4-9c7aca2be192",
-          "width": 400,
-          "x": 500,
-          "y": 190,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 88.88888888888889,
-          "height": 88.88888888888889,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "save_game_button",
-          "persistentUuid": "f43416db-1436-461d-a0ea-925a6321bd47",
-          "width": 400,
-          "x": 500,
-          "y": 279,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 88.88888888888889,
-          "height": 88.88888888888889,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "load_game_button",
-          "persistentUuid": "84e742f7-60f0-4e76-ade8-0c9d78cda6cd",
-          "width": 400,
-          "x": 500,
-          "y": 368,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 88.88888888888889,
-          "height": 88.88888888888889,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "options_button",
-          "persistentUuid": "a68c871e-c0eb-4b6c-b6c1-1437fb9fc15a",
-          "width": 400,
-          "x": 500,
-          "y": 457,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 88.88888888888889,
-          "height": 88.88888888888889,
-          "keepRatio": true,
-          "layer": "",
-          "name": "credits_button",
-          "persistentUuid": "38e61ab5-fe71-482d-a0c8-746ea72ee243",
-          "width": 400,
-          "x": 500,
-          "y": 546,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 88.88888888888889,
-          "height": 88.88888888888889,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "quit_game_button",
-          "persistentUuid": "90d7064c-2500-46d9-8840-b9bad1617f5d",
-          "width": 400,
-          "x": 500,
-          "y": 635,
-          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1002,6 +974,84 @@
             "textAlign": "left",
             "maxLength": 0
           }
+        },
+        {
+          "assetStoreId": "0364dbe0c9a504055bcfd65a3e898b58b0cb0aea76c15cc0b9961815b88ba4e6",
+          "name": "help_button",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Green Button With Stone Frame",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 0,
+            "RightPadding": 0,
+            "PressedLabelOffsetY": 2,
+            "BottomPadding": 0,
+            "TopPadding": 0,
+            "HoveredFadeOutDuration": 0.2,
+            "LabelText": "Help"
+          }
+        },
+        {
+          "assetStoreId": "82b8caa7b55342f43b24f169b4374e9224e1a78c05a87f8689663e7c4a6bad69",
+          "name": "back_button",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "Medieval Button Brown",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 0,
+            "RightPadding": 0,
+            "PressedLabelOffsetY": 4,
+            "BottomPadding": 10,
+            "TopPadding": 0,
+            "HoveredFadeOutDuration": 0.2,
+            "LabelText": "Back"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "help_text",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Version\nv0.0.2\n\nMaker\nColdfoot\n\nServices\ngithub.com\nopengameart.org\ncooltext.com\ntinyurl.com\n",
+          "font": "assets\\Roboto-Regular.ttf",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": true,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Version\nv0.0.2\n\nMaker\nColdfoot\n\nServices\ngithub.com\nopengameart.org\ncooltext.com\ntinyurl.com\n",
+            "font": "assets\\Roboto-Regular.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -1045,6 +1095,15 @@
           },
           {
             "objectName": "credits_area"
+          },
+          {
+            "objectName": "help_button"
+          },
+          {
+            "objectName": "back_button"
+          },
+          {
+            "objectName": "help_text"
           }
         ]
       },
@@ -1074,6 +1133,18 @@
                 "\"linear\"",
                 "0",
                 "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"main_men\"",
+                "0",
+                "0",
+                "0"
               ]
             }
           ]
@@ -1388,6 +1459,92 @@
                 "refresh_credits_text",
                 "True",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "help_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "level_objects",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"help\"",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "back_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "level_objects",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"main_men\"",
+                "0",
+                "0",
+                "0"
               ]
             }
           ]
@@ -11309,6 +11466,544 @@
                   "initialVariables": []
                 }
               ]
+            },
+            {
+              "areaMaxX": 348,
+              "areaMaxY": 102,
+              "areaMaxZ": 64,
+              "areaMinX": 0,
+              "areaMinY": 0,
+              "areaMinZ": 0,
+              "assetStoreAssetId": "0364dbe0c9a504055bcfd65a3e898b58b0cb0aea76c15cc0b9961815b88ba4e6",
+              "assetStoreOriginalName": "Green Button With Stone Frame",
+              "name": "Green Button With Stone Frame",
+              "objects": [
+                {
+                  "assetStoreId": "",
+                  "bold": false,
+                  "italic": false,
+                  "name": "Label",
+                  "smoothed": true,
+                  "type": "TextObject::Text",
+                  "underlined": false,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    }
+                  ],
+                  "string": "Button",
+                  "font": "Roboto-Regular.ttf",
+                  "textAlignment": "center",
+                  "characterSize": 40,
+                  "color": {
+                    "b": 255,
+                    "g": 255,
+                    "r": 255
+                  },
+                  "content": {
+                    "bold": false,
+                    "isOutlineEnabled": false,
+                    "isShadowEnabled": false,
+                    "italic": false,
+                    "outlineColor": "255;255;255",
+                    "outlineThickness": 2,
+                    "shadowAngle": 90,
+                    "shadowBlurRadius": 2,
+                    "shadowColor": "0;0;0",
+                    "shadowDistance": 4,
+                    "shadowOpacity": 127,
+                    "smoothed": true,
+                    "underlined": false,
+                    "text": "Button",
+                    "font": "Roboto-Regular.ttf",
+                    "textAlignment": "center",
+                    "verticalTextAlignment": "center",
+                    "characterSize": 40,
+                    "color": "255;255;255"
+                  }
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 0,
+                  "height": 102,
+                  "leftMargin": 0,
+                  "name": "Idle",
+                  "rightMargin": 0,
+                  "texture": "Green Button With Stone Frame_Idle.png",
+                  "tiled": false,
+                  "topMargin": 0,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 348,
+                  "variables": [
+                    {
+                      "folded": true,
+                      "name": "State",
+                      "type": "string",
+                      "value": "Idle"
+                    }
+                  ],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    },
+                    {
+                      "name": "ButtonFSM",
+                      "type": "PanelSpriteButton::ButtonFSM",
+                      "serializedBehavior": {
+                        "name": "ButtonFSM",
+                        "type": "PanelSpriteButton::ButtonFSM",
+                        "ShouldCheckHovering": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 0,
+                  "height": 102,
+                  "leftMargin": 0,
+                  "name": "Hovered",
+                  "rightMargin": 0,
+                  "texture": "Green Button With Stone Frame_Hovered.png",
+                  "tiled": false,
+                  "topMargin": 0,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 348,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    },
+                    {
+                      "name": "Tween",
+                      "type": "Tween::TweenBehavior",
+                      "serializedBehavior": {
+                        "name": "Tween",
+                        "type": "Tween::TweenBehavior"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 0,
+                  "height": 102,
+                  "leftMargin": 0,
+                  "name": "Pressed",
+                  "rightMargin": 0,
+                  "texture": "Green Button With Stone Frame_Pressed.png",
+                  "tiled": false,
+                  "topMargin": 0,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 348,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    }
+                  ]
+                }
+              ],
+              "objectsFolderStructure": {
+                "folderName": "__ROOT",
+                "children": [
+                  {
+                    "objectName": "Label"
+                  },
+                  {
+                    "objectName": "Idle"
+                  },
+                  {
+                    "objectName": "Hovered"
+                  },
+                  {
+                    "objectName": "Pressed"
+                  }
+                ]
+              },
+              "objectsGroups": [
+                {
+                  "name": "Background",
+                  "objects": [
+                    {
+                      "name": "Idle"
+                    },
+                    {
+                      "name": "Hovered"
+                    },
+                    {
+                      "name": "Pressed"
+                    }
+                  ]
+                }
+              ],
+              "layers": [
+                {
+                  "ambientLightColorB": 200,
+                  "ambientLightColorG": 200,
+                  "ambientLightColorR": 200,
+                  "camera3DFarPlaneDistance": 10000,
+                  "camera3DFieldOfView": 45,
+                  "camera3DNearPlaneDistance": 3,
+                  "cameraType": "",
+                  "followBaseLayerCamera": false,
+                  "isLightingLayer": false,
+                  "isLocked": false,
+                  "name": "",
+                  "renderingType": "",
+                  "visibility": true,
+                  "cameras": [
+                    {
+                      "defaultSize": true,
+                      "defaultViewport": true,
+                      "height": 0,
+                      "viewportBottom": 1,
+                      "viewportLeft": 0,
+                      "viewportRight": 1,
+                      "viewportTop": 0,
+                      "width": 0
+                    }
+                  ],
+                  "effects": []
+                }
+              ],
+              "instances": [
+                {
+                  "angle": 0,
+                  "customSize": false,
+                  "depth": 1,
+                  "height": 64,
+                  "layer": "",
+                  "name": "Idle",
+                  "persistentUuid": "24882334-eec8-403e-8bf1-70fc928a46e6",
+                  "width": 64,
+                  "x": 0,
+                  "y": 0,
+                  "zOrder": 1,
+                  "numberProperties": [],
+                  "stringProperties": [],
+                  "initialVariables": []
+                },
+                {
+                  "angle": 0,
+                  "customSize": true,
+                  "depth": 1,
+                  "height": 61,
+                  "keepRatio": true,
+                  "layer": "",
+                  "name": "Label",
+                  "persistentUuid": "f8a927cc-1139-440f-8a4e-bc8e56e322bf",
+                  "width": 283,
+                  "x": 32,
+                  "y": 52,
+                  "zOrder": 2,
+                  "numberProperties": [],
+                  "stringProperties": [],
+                  "initialVariables": []
+                }
+              ]
+            },
+            {
+              "areaMaxX": 192,
+              "areaMaxY": 64,
+              "areaMaxZ": 64,
+              "areaMinX": 0,
+              "areaMinY": 0,
+              "areaMinZ": 0,
+              "assetStoreAssetId": "82b8caa7b55342f43b24f169b4374e9224e1a78c05a87f8689663e7c4a6bad69",
+              "assetStoreOriginalName": "Medieval Button Brown",
+              "name": "Medieval Button Brown",
+              "objects": [
+                {
+                  "assetStoreId": "",
+                  "bold": false,
+                  "italic": false,
+                  "name": "Label",
+                  "smoothed": true,
+                  "type": "TextObject::Text",
+                  "underlined": false,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    }
+                  ],
+                  "string": "Button",
+                  "font": "CaveatBrush-Regular.ttf",
+                  "textAlignment": "center",
+                  "characterSize": 40,
+                  "color": {
+                    "b": 159,
+                    "g": 190,
+                    "r": 219
+                  },
+                  "content": {
+                    "bold": false,
+                    "isOutlineEnabled": false,
+                    "isShadowEnabled": false,
+                    "italic": false,
+                    "outlineColor": "255;255;255",
+                    "outlineThickness": 2,
+                    "shadowAngle": 90,
+                    "shadowBlurRadius": 2,
+                    "shadowColor": "0;0;0",
+                    "shadowDistance": 4,
+                    "shadowOpacity": 127,
+                    "smoothed": true,
+                    "underlined": false,
+                    "text": "Button",
+                    "font": "CaveatBrush-Regular.ttf",
+                    "textAlignment": "center",
+                    "verticalTextAlignment": "center",
+                    "characterSize": 40,
+                    "color": "219;190;159"
+                  }
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 11,
+                  "height": 64,
+                  "leftMargin": 7,
+                  "name": "Idle",
+                  "rightMargin": 7,
+                  "texture": "Medieval Button Brown_Idle.png",
+                  "tiled": false,
+                  "topMargin": 7,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 192,
+                  "variables": [
+                    {
+                      "folded": true,
+                      "name": "State",
+                      "type": "string",
+                      "value": "Idle"
+                    }
+                  ],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    },
+                    {
+                      "name": "ButtonFSM",
+                      "type": "PanelSpriteButton::ButtonFSM",
+                      "serializedBehavior": {
+                        "name": "ButtonFSM",
+                        "type": "PanelSpriteButton::ButtonFSM",
+                        "ShouldCheckHovering": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 11,
+                  "height": 64,
+                  "leftMargin": 7,
+                  "name": "Hovered",
+                  "rightMargin": 7,
+                  "texture": "Medieval Button Brown_Hovered.png",
+                  "tiled": false,
+                  "topMargin": 7,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 192,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    },
+                    {
+                      "name": "Tween",
+                      "type": "Tween::TweenBehavior",
+                      "serializedBehavior": {
+                        "name": "Tween",
+                        "type": "Tween::TweenBehavior"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "assetStoreId": "",
+                  "bottomMargin": 7,
+                  "height": 64,
+                  "leftMargin": 7,
+                  "name": "Pressed",
+                  "rightMargin": 7,
+                  "texture": "Medieval Button Brown_Pressed.png",
+                  "tiled": false,
+                  "topMargin": 11,
+                  "type": "PanelSpriteObject::PanelSprite",
+                  "width": 192,
+                  "variables": [],
+                  "effects": [],
+                  "behaviors": [
+                    {
+                      "name": "Anchor",
+                      "type": "AnchorBehavior::AnchorBehavior",
+                      "bottomEdgeAnchor": 2,
+                      "leftEdgeAnchor": 1,
+                      "relativeToOriginalWindowSize": true,
+                      "rightEdgeAnchor": 2,
+                      "topEdgeAnchor": 1,
+                      "useLegacyBottomAndRightAnchors": false
+                    }
+                  ]
+                }
+              ],
+              "objectsFolderStructure": {
+                "folderName": "__ROOT",
+                "children": [
+                  {
+                    "objectName": "Label"
+                  },
+                  {
+                    "objectName": "Idle"
+                  },
+                  {
+                    "objectName": "Hovered"
+                  },
+                  {
+                    "objectName": "Pressed"
+                  }
+                ]
+              },
+              "objectsGroups": [
+                {
+                  "name": "Background",
+                  "objects": [
+                    {
+                      "name": "Idle"
+                    },
+                    {
+                      "name": "Hovered"
+                    },
+                    {
+                      "name": "Pressed"
+                    }
+                  ]
+                }
+              ],
+              "layers": [
+                {
+                  "ambientLightColorB": 200,
+                  "ambientLightColorG": 200,
+                  "ambientLightColorR": 200,
+                  "camera3DFarPlaneDistance": 10000,
+                  "camera3DFieldOfView": 45,
+                  "camera3DNearPlaneDistance": 3,
+                  "cameraType": "",
+                  "followBaseLayerCamera": false,
+                  "isLightingLayer": false,
+                  "isLocked": false,
+                  "name": "",
+                  "renderingType": "",
+                  "visibility": true,
+                  "cameras": [
+                    {
+                      "defaultSize": true,
+                      "defaultViewport": true,
+                      "height": 0,
+                      "viewportBottom": 1,
+                      "viewportLeft": 0,
+                      "viewportRight": 1,
+                      "viewportTop": 0,
+                      "width": 0
+                    }
+                  ],
+                  "effects": []
+                }
+              ],
+              "instances": [
+                {
+                  "angle": 0,
+                  "customSize": false,
+                  "depth": 1,
+                  "height": 64,
+                  "layer": "",
+                  "name": "Idle",
+                  "persistentUuid": "24882334-eec8-403e-8bf1-70fc928a46e6",
+                  "width": 64,
+                  "x": 0,
+                  "y": 0,
+                  "zOrder": 1,
+                  "numberProperties": [],
+                  "stringProperties": [],
+                  "initialVariables": []
+                },
+                {
+                  "angle": 0,
+                  "customSize": true,
+                  "depth": 1,
+                  "height": 52,
+                  "keepRatio": true,
+                  "layer": "",
+                  "name": "Label",
+                  "persistentUuid": "db8de6d9-0a01-4de7-bdbc-4883e490e7f7",
+                  "width": 184,
+                  "x": 4,
+                  "y": 30,
+                  "zOrder": 2,
+                  "numberProperties": [],
+                  "stringProperties": [],
+                  "initialVariables": []
+                }
+              ]
             }
           ]
         }
@@ -11545,8 +12240,171 @@
   "externalLayouts": [
     {
       "associatedLayout": "main_menu",
+      "name": "main_men",
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "new_game_button",
+          "persistentUuid": "b1454d66-3fae-4240-aaf9-dfa8ed01657b",
+          "width": 400,
+          "x": 500,
+          "y": 190,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "save_game_button",
+          "persistentUuid": "448bf806-49dd-451c-9115-a2cee1370f0b",
+          "width": 400,
+          "x": 500,
+          "y": 279,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "load_game_button",
+          "persistentUuid": "9af8697a-cc97-41f1-b28d-b52183a971e6",
+          "width": 400,
+          "x": 500,
+          "y": 368,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "options_button",
+          "persistentUuid": "d2db2751-d9e4-44d5-9f5f-507c00368cab",
+          "width": 400,
+          "x": 500,
+          "y": 457,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "credits_button",
+          "persistentUuid": "97e2515e-9bf2-4ca5-9dfd-98c424d204d9",
+          "width": 400,
+          "x": 500,
+          "y": 546,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 88.88888888888889,
+          "height": 88.88888888888889,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "quit_game_button",
+          "persistentUuid": "7863bfc2-e3b9-4a4a-a34a-b26989bdd773",
+          "width": 400,
+          "x": 500,
+          "y": 635,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "logo",
+          "persistentUuid": "823b6356-9915-448e-948b-9996d8ece24b",
+          "width": 0,
+          "x": 349,
+          "y": 0,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "editionSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5,
+        "windowMask": false
+      }
+    },
+    {
+      "associatedLayout": "main_menu",
       "name": "new_game",
-      "instances": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 66.66666666666666,
+          "height": 66.66666666666666,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "back_button",
+          "persistentUuid": "0e4ee28e-b9d7-4c6b-93ae-84f21541f45f",
+          "width": 200,
+          "x": 800,
+          "y": 630,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
       "editionSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -11564,7 +12422,26 @@
     {
       "associatedLayout": "main_menu",
       "name": "save_game",
-      "instances": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 66.66666666666666,
+          "height": 66.66666666666666,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "back_button",
+          "persistentUuid": "ab3b736c-c593-426a-adcb-e19b3437d977",
+          "width": 200,
+          "x": 800,
+          "y": 630,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
       "editionSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -11582,7 +12459,26 @@
     {
       "associatedLayout": "main_menu",
       "name": "load_game",
-      "instances": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 66.66666666666666,
+          "height": 66.66666666666666,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "back_button",
+          "persistentUuid": "e9eb44dd-6047-456b-a931-9a6059c6dfa4",
+          "width": 200,
+          "x": 800,
+          "y": 630,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
       "editionSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -11600,7 +12496,26 @@
     {
       "associatedLayout": "main_menu",
       "name": "options",
-      "instances": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 66.66666666666666,
+          "height": 66.66666666666666,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "back_button",
+          "persistentUuid": "058f89f5-9103-42af-9322-b770d522a676",
+          "width": 200,
+          "x": 800,
+          "y": 630,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
       "editionSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -11643,6 +12558,96 @@
               "value": "a"
             }
           ],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 36.7816091954023,
+          "height": 58.62068965517241,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "help_button",
+          "persistentUuid": "def51acd-2e71-47b3-bc9d-89272d6f2ce6",
+          "width": 200,
+          "x": 452,
+          "y": 20,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 66.66666666666666,
+          "height": 66.66666666666666,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "back_button",
+          "persistentUuid": "dd6d378e-fb50-44c9-baf9-f284a3bc81f1",
+          "width": 200,
+          "x": 800,
+          "y": 630,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "editionSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5,
+        "windowMask": false
+      }
+    },
+    {
+      "associatedLayout": "main_menu",
+      "name": "help",
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 66.66666666666666,
+          "height": 66.66666666666666,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "back_button",
+          "persistentUuid": "00dfb8b7-3cf7-4599-a3e1-b1bcbc755e63",
+          "width": 200,
+          "x": 800,
+          "y": 630,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 302,
+          "keepRatio": true,
+          "layer": "",
+          "name": "help_text",
+          "persistentUuid": "7b50723d-5e30-4212-9943-c6a5c0d51cfa",
+          "width": 633,
+          "x": 400,
+          "y": 122,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
           "initialVariables": []
         }
       ],
