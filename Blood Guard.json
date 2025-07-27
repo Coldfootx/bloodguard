@@ -613,9 +613,9 @@
           "children": []
         },
         {
-          "name": "load_names",
-          "type": "structure",
-          "children": []
+          "name": "save_name_header",
+          "type": "number",
+          "value": 1
         },
         {
           "name": "slot_amount",
@@ -644,6 +644,16 @@
         },
         {
           "name": "dialog_box_id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "save_name_storage",
+          "type": "string",
+          "value": "blood_guard_save_name_storage"
+        },
+        {
+          "name": "currently_saving_id",
           "type": "number",
           "value": 0
         }
@@ -745,7 +755,7 @@
           "height": 0,
           "keepRatio": true,
           "layer": "dialog_layer",
-          "name": "menu_dialog_box2",
+          "name": "menu_dialog_box",
           "persistentUuid": "4c35ecfd-2751-4b48-a7cb-78fd746bbc55",
           "width": 0,
           "x": 613,
@@ -1415,7 +1425,7 @@
         },
         {
           "assetStoreId": "",
-          "name": "menu_dialog_box2",
+          "name": "menu_dialog_box",
           "type": "dialog_box_extension::Dialog_Box",
           "variant": "",
           "variables": [],
@@ -1488,7 +1498,7 @@
             "objectName": "save_load_name_save_cancel"
           },
           {
-            "objectName": "menu_dialog_box2"
+            "objectName": "menu_dialog_box"
           }
         ]
       },
@@ -1530,6 +1540,117 @@
                 "0",
                 "0",
                 "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "GroupExists"
+                  },
+                  "parameters": [
+                    "save_name_storage",
+                    "save_name_header"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "temp_number1",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Repeat",
+                  "repeatExpression": "slot_amount",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "temp_number1",
+                        "=",
+                        "temp_number1 + 1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PushString"
+                      },
+                      "parameters": [
+                        "save_names",
+                        "\"Toimii \"+ToString(temp_number1)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "EcrireFichierExp"
+                      },
+                      "parameters": [
+                        "save_name_storage",
+                        "save_name_header",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FileSystem::SaveVariableToJSONFileSync"
+                      },
+                      "parameters": [
+                        "save_names",
+                        "save_name_storage",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ReadNumberFromStorage"
+                  },
+                  "parameters": [
+                    "save_name_storage",
+                    "save_name_header",
+                    "",
+                    "save_name_header"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FileSystem::LoadVariableFromJSONFileSync"
+                  },
+                  "parameters": [
+                    "save_names",
+                    "save_name_storage",
+                    "",
+                    "yes"
+                  ]
+                }
               ]
             }
           ]
@@ -1632,7 +1753,7 @@
                 "value": "dialog_box_extension::Dialog_Box::shown"
               },
               "parameters": [
-                "menu_dialog_box2",
+                "menu_dialog_box",
                 ""
               ]
             }
@@ -1673,7 +1794,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 },
@@ -1725,7 +1846,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 },
@@ -1815,7 +1936,7 @@
                       "parameters": [
                         "save_load_button",
                         "=",
-                        "\"Save slot \" + ToString(temp_number1)",
+                        "save_names[temp_number1-1]",
                         ""
                       ]
                     },
@@ -1879,7 +2000,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 },
@@ -1969,7 +2090,7 @@
                       "parameters": [
                         "save_load_button",
                         "=",
-                        "\"Load slot \" + ToString(temp_number1)",
+                        "save_names[temp_number1-1]",
                         ""
                       ]
                     },
@@ -2231,10 +2352,10 @@
                         "value": "dialog_box_extension::Dialog_Box::create"
                       },
                       "parameters": [
-                        "menu_dialog_box2",
+                        "menu_dialog_box",
                         "\"Lose unsaved progress and load from the selected slot \"+ToString(current_id)+\"?\"",
-                        "window_width/2-menu_dialog_box2.Width()/2",
-                        "window_height/2-menu_dialog_box2.Height()/2",
+                        "window_width / 2 - menu_dialog_box.Width() / 2",
+                        "window_height / 2 - menu_dialog_box.Height() / 2",
                         ""
                       ]
                     },
@@ -2304,7 +2425,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 }
@@ -2362,10 +2483,10 @@
                     "value": "dialog_box_extension::Dialog_Box::create"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     "\"Format and save to the selected slot \"+ToString(current_id)+\"?\"",
-                    "window_width/2-menu_dialog_box2.Width()/2",
-                    "window_height/2-menu_dialog_box2.Height()/2",
+                    "window_width / 2 - menu_dialog_box.Width() / 2",
+                    "window_height / 2 - menu_dialog_box.Height() / 2",
                     ""
                   ]
                 },
@@ -2377,6 +2498,16 @@
                     "dialog_box_id",
                     "=",
                     "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "currently_saving_id",
+                    "=",
+                    "current_id"
                   ]
                 }
               ]
@@ -2415,7 +2546,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 },
@@ -2467,7 +2598,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 },
@@ -2572,7 +2703,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 },
@@ -2615,10 +2746,10 @@
                     "value": "dialog_box_extension::Dialog_Box::create"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     "\"Lose unsaved progress and quit the game?\"",
-                    "window_width/2-menu_dialog_box2.Width()/2",
-                    "window_height/2-menu_dialog_box2.Height()/2",
+                    "window_width / 2 - menu_dialog_box.Width() / 2",
+                    "window_height / 2 - menu_dialog_box.Height() / 2",
                     ""
                   ]
                 },
@@ -2644,7 +2775,7 @@
                 "value": "dialog_box_extension::Dialog_Box::is_yes"
               },
               "parameters": [
-                "menu_dialog_box2",
+                "menu_dialog_box",
                 ""
               ]
             }
@@ -2693,10 +2824,85 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Quit"
+                    "value": "SetStringVariable"
                   },
                   "parameters": [
+                    "save_names[currently_saving_id-1]",
+                    "=",
+                    "save_load_name.Text::Value()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "EcrireFichierExp"
+                  },
+                  "parameters": [
+                    "save_name_storage",
+                    "save_name_header",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FileSystem::SaveVariableToJSONFileSync"
+                  },
+                  "parameters": [
+                    "save_names",
+                    "save_name_storage",
                     ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "save_load_button",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "id",
+                        "=",
+                        "currently_saving_id"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "=",
+                        "save_names[currently_saving_id-1]",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "dialog_box_extension::Dialog_Box::delete"
+                      },
+                      "parameters": [
+                        "menu_dialog_box",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -2736,7 +2942,7 @@
                 "value": "dialog_box_extension::Dialog_Box::is_no"
               },
               "parameters": [
-                "menu_dialog_box2",
+                "menu_dialog_box",
                 ""
               ]
             }
@@ -2763,7 +2969,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 }
@@ -2789,7 +2995,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 }
@@ -2815,7 +3021,7 @@
                     "value": "dialog_box_extension::Dialog_Box::delete"
                   },
                   "parameters": [
-                    "menu_dialog_box2",
+                    "menu_dialog_box",
                     ""
                   ]
                 }
