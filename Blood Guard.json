@@ -3048,7 +3048,7 @@
           "conditions": [
             {
               "type": {
-                "value": "dialog_box_extension::Dialog_Box::is_yes"
+                "value": "dialog_box_extension::Dialog_Box::shown"
               },
               "parameters": [
                 "menu_dialog_box",
@@ -3063,22 +3063,154 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "value": "dialog_box_extension::Dialog_Box::is_yes"
                   },
                   "parameters": [
-                    "dialog_box_id",
-                    "=",
-                    "1"
+                    "menu_dialog_box",
+                    ""
                   ]
                 }
               ],
-              "actions": [
+              "actions": [],
+              "events": [
                 {
-                  "type": {
-                    "value": "Quit"
-                  },
-                  "parameters": [
-                    ""
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "dialog_box_id",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Quit"
+                      },
+                      "parameters": [
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "dialog_box_id",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "save_names[currently_saving_id-1]",
+                        "=",
+                        "save_load_name.Text::Value()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FileSystem::SaveVariableToJSONFileSync"
+                      },
+                      "parameters": [
+                        "save_names",
+                        "save_name_storage",
+                        ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "save_load_button",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "save_load_button",
+                            "id",
+                            "=",
+                            "currently_saving_id"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+                          },
+                          "parameters": [
+                            "save_load_button",
+                            "=",
+                            "save_names[currently_saving_id-1]",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "dialog_box_extension::Dialog_Box::delete"
+                          },
+                          "parameters": [
+                            "menu_dialog_box",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "dialog_box_id",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Quit"
+                      },
+                      "parameters": [
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -3088,69 +3220,37 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "value": "dialog_box_extension::Dialog_Box::is_no"
                   },
                   "parameters": [
-                    "dialog_box_id",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "save_names[currently_saving_id-1]",
-                    "=",
-                    "save_load_name.Text::Value()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FileSystem::SaveVariableToJSONFileSync"
-                  },
-                  "parameters": [
-                    "save_names",
-                    "save_name_storage",
+                    "menu_dialog_box",
                     ""
                   ]
                 }
               ],
+              "actions": [],
               "events": [
                 {
-                  "type": "BuiltinCommonInstructions::ForEach",
-                  "object": "save_load_button",
+                  "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
                       "type": {
-                        "value": "NumberObjectVariable"
+                        "value": "NumberVariable"
                       },
                       "parameters": [
-                        "save_load_button",
-                        "id",
+                        "dialog_box_id",
                         "=",
-                        "currently_saving_id"
+                        "1"
                       ]
-                    },
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::Once"
-                      },
-                      "parameters": []
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+                        "value": "dialog_box_extension::Dialog_Box::delete"
                       },
                       "parameters": [
-                        "save_load_button",
-                        "=",
-                        "save_names[currently_saving_id-1]",
+                        "menu_dialog_box",
                         ""
                       ]
                     }
@@ -3158,7 +3258,44 @@
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "dialog_box_id",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "dialog_box_extension::Dialog_Box::delete"
+                      },
+                      "parameters": [
+                        "menu_dialog_box",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "dialog_box_id",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ],
                   "actions": [
                     {
                       "type": {
@@ -3172,31 +3309,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "dialog_box_id",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Quit"
-                  },
-                  "parameters": [
-                    ""
-                  ]
-                }
-              ]
             }
           ]
         },
@@ -3205,92 +3317,92 @@
           "conditions": [
             {
               "type": {
-                "value": "dialog_box_extension::Dialog_Box::is_no"
+                "value": "MouseButtonFromTextReleased"
               },
               "parameters": [
-                "menu_dialog_box",
+                "",
+                "\"Left\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "text_field_extension::text_field_custom::disable_focus"
+              },
+              "parameters": [
+                "text_fields",
                 ""
               ]
             }
           ],
-          "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
+                    "value": "text_field_extension::text_field_custom::is_hoovered"
                   },
                   "parameters": [
-                    "dialog_box_id",
-                    "=",
-                    "1"
+                    "text_fields",
+                    "CursorX()",
+                    "CursorY()",
+                    ""
                   ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "dialog_box_extension::Dialog_Box::delete"
+                    "value": "text_field_extension::text_field_custom::set_focus"
                   },
                   "parameters": [
-                    "menu_dialog_box",
+                    "text_fields",
                     ""
                   ]
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "text_fields",
+          "conditions": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "dialog_box_id",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "dialog_box_extension::Dialog_Box::delete"
-                  },
-                  "parameters": [
-                    "menu_dialog_box",
-                    ""
-                  ]
-                }
+              "type": {
+                "value": "text_field_extension::text_field_custom::get_focus"
+              },
+              "parameters": [
+                "text_fields",
+                ""
               ]
             },
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "dialog_box_id",
-                    "=",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "dialog_box_extension::Dialog_Box::delete"
-                  },
-                  "parameters": [
-                    "menu_dialog_box",
-                    ""
-                  ]
-                }
+              "type": {
+                "value": "AnyKeyReleased"
+              },
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "text_field_extension::text_field_custom::set_text"
+              },
+              "parameters": [
+                "text_fields",
+                "text_fields.get_text()+LastPressedKey()",
+                ""
               ]
             }
           ]
@@ -3527,13 +3639,7 @@
       "authorIds": [],
       "dependencies": [],
       "globalVariables": [],
-      "sceneVariables": [
-        {
-          "name": "has_focus",
-          "type": "boolean",
-          "value": false
-        }
-      ],
+      "sceneVariables": [],
       "eventsFunctions": [],
       "eventsBasedBehaviors": [],
       "eventsBasedObjects": [
@@ -3598,7 +3704,13 @@
               "name": "text_field_bg",
               "type": "Sprite",
               "updateIfNotVisible": false,
-              "variables": [],
+              "variables": [
+                {
+                  "name": "has_focus",
+                  "type": "boolean",
+                  "value": false
+                }
+              ],
               "effects": [],
               "behaviors": [],
               "animations": [
@@ -3735,7 +3847,7 @@
           "eventsFunctions": [
             {
               "fullName": "",
-              "functionType": "Condition",
+              "functionType": "ExpressionAndCondition",
               "name": "get_text",
               "sentence": "Returns the text of the text field _PARAM0_",
               "events": [
@@ -3754,6 +3866,9 @@
                   ]
                 }
               ],
+              "expressionType": {
+                "type": "string"
+              },
               "parameters": [
                 {
                   "description": "Object",
@@ -3776,12 +3891,12 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "SetBooleanVariable"
+                        "value": "SetObjectVariableAsBoolean"
                       },
                       "parameters": [
+                        "text_field_bg",
                         "has_focus",
-                        "True",
-                        ""
+                        "True"
                       ]
                     }
                   ]
@@ -3809,11 +3924,11 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "SetBooleanVariable"
+                        "value": "SetObjectVariableAsBoolean"
                       },
                       "parameters": [
+                        "text_field_bg",
                         "has_focus",
-                        "False",
                         ""
                       ]
                     }
@@ -3841,12 +3956,12 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "BooleanVariable"
+                        "value": "ObjectVariableAsBoolean"
                       },
                       "parameters": [
+                        "text_field_bg",
                         "has_focus",
-                        "True",
-                        ""
+                        "True"
                       ]
                     }
                   ],
@@ -3866,12 +3981,12 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "BooleanVariable"
+                        "value": "ObjectVariableAsBoolean"
                       },
                       "parameters": [
+                        "text_field_bg",
                         "has_focus",
-                        "False",
-                        ""
+                        "False"
                       ]
                     }
                   ],
@@ -3912,7 +4027,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetSize"
                       },
                       "parameters": [
-                        "Object",
+                        "text_field_bg",
                         "Resizable",
                         "size_width",
                         "size_height"
@@ -3941,11 +4056,11 @@
                     },
                     {
                       "type": {
-                        "value": "SetBooleanVariable"
+                        "value": "SetObjectVariableAsBoolean"
                       },
                       "parameters": [
+                        "text_field_bg",
                         "has_focus",
-                        "False",
                         ""
                       ]
                     },
@@ -4006,6 +4121,141 @@
             },
             {
               "fullName": "",
+              "functionType": "Condition",
+              "name": "is_hoovered",
+              "sentence": "The text field _PARAM0_ is hoovered with mouse at _PARAM1_ and _PARAM2_.",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "False"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "mouse_x",
+                        ">",
+                        "Object.X()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "mouse_x",
+                        "<",
+                        "Object.X()+text_field_bg.Width()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "mouse_y",
+                        ">",
+                        "Object.Y()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "mouse_y",
+                        "<",
+                        "Object.Y()+text_field_bg.Height()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "text_field_extension::text_field_custom",
+                  "type": "object"
+                },
+                {
+                  "description": "Mouse X",
+                  "name": "mouse_x",
+                  "type": "expression"
+                },
+                {
+                  "description": "Mouse Y",
+                  "name": "mouse_y",
+                  "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "set_text",
+              "sentence": "Text field _PARAM0_ text is replaced to _PARAM1_.",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "text_msg",
+                        "Text",
+                        "=",
+                        "new_text"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "text_field_extension::text_field_custom",
+                  "type": "object"
+                },
+                {
+                  "description": "New Text",
+                  "name": "new_text",
+                  "type": "string"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
               "functionType": "Action",
               "name": "delete",
               "sentence": "Text field _PARAM0_ is deleted.",
@@ -4016,22 +4266,22 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "has_focus",
-                        "False",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "MettreX"
                       },
                       "parameters": [
                         "Object",
                         "=",
-                        "0-Object.Width()"
+                        "0-text_field_bg.Width()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetObjectVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "text_field_bg",
+                        "has_focus",
+                        "False"
                       ]
                     }
                   ]
