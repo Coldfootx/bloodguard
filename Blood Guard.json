@@ -25,8 +25,8 @@
     "windowWidth": 1400,
     "windowHeight": 720,
     "latestCompilationDirectory": "",
-    "maxFPS": 60,
-    "minFPS": 20,
+    "maxFPS": 144,
+    "minFPS": 124,
     "verticalSync": false,
     "platformSpecificAssets": {
       "android-icon-144": "",
@@ -475,7 +475,7 @@
   "objectsGroups": [],
   "variables": [
     {
-      "name": "Data",
+      "name": "save_data",
       "type": "structure",
       "children": []
     },
@@ -488,6 +488,11 @@
       "name": "window_height",
       "type": "number",
       "value": 720
+    },
+    {
+      "name": "y_limit",
+      "type": "number",
+      "value": 72000
     }
   ],
   "layouts": [
@@ -685,6 +690,11 @@
           "name": "currently_saving_id",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "temp_boolean1",
+          "type": "boolean",
+          "value": false
         }
       ],
       "instances": [
@@ -804,7 +814,7 @@
           "name": "text_field_custom1",
           "persistentUuid": "f1b0a9b5-7def-430c-a2f2-5dced04b208d",
           "width": 0,
-          "x": 38,
+          "x": 40,
           "y": -124,
           "zOrder": 8,
           "numberProperties": [],
@@ -820,7 +830,7 @@
           "name": "text_field_custom2",
           "persistentUuid": "00d2e443-7359-406a-9335-a5702154f2b0",
           "width": 0,
-          "x": 34,
+          "x": 40,
           "y": -206,
           "zOrder": 9,
           "numberProperties": [],
@@ -836,7 +846,7 @@
           "name": "text_field_custom3",
           "persistentUuid": "bb1d15d4-4840-4f0f-bf19-71281455dd90",
           "width": 0,
-          "x": 30,
+          "x": 40,
           "y": -287,
           "zOrder": 10,
           "numberProperties": [],
@@ -852,7 +862,7 @@
           "name": "text_field_custom4",
           "persistentUuid": "7508be7d-7aba-455f-8d75-ab0ae3ec0f98",
           "width": 0,
-          "x": 37,
+          "x": 40,
           "y": -366,
           "zOrder": 11,
           "numberProperties": [],
@@ -1740,7 +1750,7 @@
                       },
                       "parameters": [
                         "save_names",
-                        "\"Toimii \"+ToString(temp_number1)"
+                        "\"Empty slot \"+ToString(temp_number1)"
                       ]
                     }
                   ]
@@ -3367,8 +3377,7 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::ForEach",
-          "object": "text_fields",
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
@@ -3381,28 +3390,305 @@
             },
             {
               "type": {
-                "value": "AnyKeyReleased"
+                "value": "AnyKeyPressed"
               },
               "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if(runtimeScene._runtimeGame.getInputManager().anyKeyPressed()) {",
+                "    runtimeScene.getVariables().get(\"temp_string1\").setString(runtimeScene._runtimeGame.getInputManager().getLastPressedKey());",
+                "}",
+                "runtimeScene._runtimeGame.getInputManager().clearAllPressedKeys()"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::set_text"
+                  },
+                  "parameters": [
+                    "text_fields",
+                    "text_fields.get_text()+temp_string1",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "text_field_extension::text_field_custom::get_focus"
+              },
+              "parameters": [
+                "text_fields",
                 ""
               ]
             },
             {
               "type": {
-                "value": "BuiltinCommonInstructions::Once"
+                "value": "AnyKeyPressed"
               },
-              "parameters": []
+              "parameters": [
+                ""
+              ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "text_field_extension::text_field_custom::set_text"
+                "value": "SetStringVariable"
               },
               "parameters": [
-                "text_fields",
-                "text_fields.get_text()+LastPressedKey()",
-                ""
+                "temp_string1",
+                "=",
+                "LastPressedKey()"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "!=",
+                    "SubStr(text_fields.get_text(),StrLength(text_fields.get_text())-1,StrLength(text_fields.get_text()))"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "temp_boolean1",
+                    "False",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "!=",
+                    "SubStr(text_fields.get_text(),StrLength(text_fields.get_text())-1,StrLength(text_fields.get_text()))"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "temp_boolean1",
+                    "True",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "=",
+                    "\"Back\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::set_text"
+                  },
+                  "parameters": [
+                    "text_fields",
+                    "SubStr(text_fields.get_text(),0,StrLength(text_fields.get_text())-1)",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "=",
+                    "\"\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "=",
+                    "\"Return\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "=",
+                    "\"\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "=",
+                    "\"Escape\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "=",
+                    "\"\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "=",
+                    "\"Space\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "temp_string1",
+                    "=",
+                    "\" \""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "temp_boolean1",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::set_text"
+                  },
+                  "parameters": [
+                    "text_fields",
+                    "text_fields.get_text()+temp_string1",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "temp_boolean1",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::set_text"
+                  },
+                  "parameters": [
+                    "text_fields",
+                    "text_fields.get_text()+temp_string1",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -3638,7 +3924,13 @@
       "tags": [],
       "authorIds": [],
       "dependencies": [],
-      "globalVariables": [],
+      "globalVariables": [
+        {
+          "name": "y_limit",
+          "type": "number",
+          "value": 720000
+        }
+      ],
       "sceneVariables": [],
       "eventsFunctions": [],
       "eventsBasedBehaviors": [],
@@ -3830,14 +4122,14 @@
               "angle": 0,
               "customSize": true,
               "depth": 1,
-              "height": 34,
+              "height": 58,
               "keepRatio": true,
               "layer": "",
               "name": "text_msg",
               "persistentUuid": "c757bcc3-5ce8-4bfb-b7e5-f40770c36c3a",
-              "width": 455,
+              "width": 505,
               "x": 16,
-              "y": 31,
+              "y": 30,
               "zOrder": 9,
               "numberProperties": [],
               "stringProperties": [],
@@ -4266,12 +4558,12 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "MettreX"
+                        "value": "MettreY"
                       },
                       "parameters": [
                         "Object",
                         "=",
-                        "0-text_field_bg.Width()"
+                        "0-y_limit"
                       ]
                     },
                     {
@@ -4319,7 +4611,13 @@
       "tags": [],
       "authorIds": [],
       "dependencies": [],
-      "globalVariables": [],
+      "globalVariables": [
+        {
+          "name": "y_limit",
+          "type": "number",
+          "value": 720000
+        }
+      ],
       "sceneVariables": [
         {
           "name": "shown",
@@ -4868,12 +5166,12 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "MettreX"
+                        "value": "MettreY"
                       },
                       "parameters": [
                         "Object",
                         "=",
-                        "0-Object.Width()"
+                        "0-y_limit"
                       ]
                     },
                     {
