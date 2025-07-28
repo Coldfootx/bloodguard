@@ -2658,6 +2658,15 @@
                 },
                 {
                   "type": {
+                    "value": "text_field_extension::text_field_custom::delete"
+                  },
+                  "parameters": [
+                    "text_field_custom1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "dialog_box_extension::Dialog_Box::create"
                   },
                   "parameters": [
@@ -3186,15 +3195,6 @@
                             "menu_dialog_box",
                             ""
                           ]
-                        },
-                        {
-                          "type": {
-                            "value": "text_field_extension::text_field_custom::delete"
-                          },
-                          "parameters": [
-                            "text_field_custom1",
-                            ""
-                          ]
                         }
                       ]
                     }
@@ -3289,15 +3289,6 @@
                       },
                       "parameters": [
                         "menu_dialog_box",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "text_field_extension::text_field_custom::delete"
-                      },
-                      "parameters": [
-                        "text_field_custom1",
                         ""
                       ]
                     }
