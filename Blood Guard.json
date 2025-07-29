@@ -3408,9 +3408,11 @@
                 "    let character = runtimeScene._runtimeGame.getInputManager().getLastPressedKey();",
                 "    if (character == 8) {",
                 "        runtimeScene.getVariables().get(\"temp_string1\").setString(\"backspace\");",
+                "    } else if (character == 13) {",
+                "        runtimeScene.getVariables().get(\"temp_string1\").setString(\"\");",
                 "    } else {",
-                "    character = String.fromCharCode(character);",
-                "    runtimeScene.getVariables().get(\"temp_string1\").setString(character);",
+                "        character = String.fromCharCode(character);",
+                "        runtimeScene.getVariables().get(\"temp_string1\").setString(character);",
                 "    }",
                 "}",
                 "runtimeScene._runtimeGame.getInputManager().clearAllPressedKeys();"
