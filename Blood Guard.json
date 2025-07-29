@@ -1754,7 +1754,7 @@
                       },
                       "parameters": [
                         "save_names",
-                        "\"Empty slot \"+ToString(temp_number1)"
+                        "\"SAVE SLOT \"+ToString(temp_number1)"
                       ]
                     }
                   ]
@@ -3132,7 +3132,7 @@
                       "parameters": [
                         "save_names[currently_saving_id-1]",
                         "=",
-                        "text_field_custom1.get_text()"
+                        "text_field_custom1.get_text()+\" \"+ToString(currently_saving_id)"
                       ]
                     },
                     {
