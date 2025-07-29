@@ -475,11 +475,6 @@
   "objectsGroups": [],
   "variables": [
     {
-      "name": "save_data",
-      "type": "structure",
-      "children": []
-    },
-    {
       "name": "window_width",
       "type": "number",
       "value": 1400
@@ -516,7 +511,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.4335774304702372,
+        "zoomFactor": 0.39251611754882265,
         "windowMask": false
       },
       "objectsGroups": [
@@ -601,6 +596,26 @@
             },
             {
               "name": "text_field_custom4"
+            }
+          ]
+        },
+        {
+          "name": "menu_bg",
+          "objects": [
+            {
+              "name": "bg_tile"
+            },
+            {
+              "name": "green_circle"
+            },
+            {
+              "name": "red_circle"
+            },
+            {
+              "name": "pink_circle"
+            },
+            {
+              "name": "blue_circle"
             }
           ]
         }
@@ -695,99 +710,20 @@
           "name": "temp_boolean1",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "saved_data",
+          "type": "structure",
+          "children": [
+            {
+              "name": "debug",
+              "type": "number",
+              "value": 100
+            }
+          ]
         }
       ],
       "instances": [
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 360,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "green_circle",
-          "persistentUuid": "67d237a5-0fa5-4a1e-bb77-6b8c563b16d0",
-          "width": 360,
-          "x": 0,
-          "y": 360,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 360,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "red_circle",
-          "persistentUuid": "5ea640c7-f096-44c0-9b57-29dbf813ed06",
-          "width": 360,
-          "x": 0,
-          "y": 0,
-          "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 360,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "pink_circle",
-          "persistentUuid": "06e25088-2077-4af1-aabc-ed1ce49e1f95",
-          "width": 360,
-          "x": 1040,
-          "y": 0,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
-          "height": 360,
-          "keepRatio": true,
-          "layer": "",
-          "locked": true,
-          "name": "blue_circle",
-          "persistentUuid": "163fcf90-6180-48ff-b70b-a01f4961fb64",
-          "width": 360,
-          "x": 1040,
-          "y": 360,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1.6551724137931034,
-          "height": 720,
-          "keepRatio": true,
-          "layer": "bg_layer",
-          "locked": true,
-          "name": "bg_tile",
-          "persistentUuid": "392492ee-e9e0-4678-974a-7f112e84c438",
-          "width": 1400,
-          "x": 0,
-          "y": 0,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
         {
           "angle": 0,
           "customSize": false,
@@ -872,9 +808,35 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "bg_layer",
+          "name": "menu_bg",
+          "persistentUuid": "5e602144-0f73-4149-895f-04c4cbbea2be",
+          "width": 0,
+          "x": 0,
+          "y": 0,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
+        {
+          "assetStoreId": "",
+          "name": "menu_bg",
+          "type": "menu_bg_extension::menu_bg",
+          "variant": "",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {}
+        },
         {
           "assetStoreId": "",
           "name": "text_field_custom1",
@@ -1661,6 +1623,9 @@
           },
           {
             "objectName": "text_field_custom4"
+          },
+          {
+            "objectName": "menu_bg"
           }
         ]
       },
@@ -1680,20 +1645,6 @@
           "actions": [
             {
               "type": {
-                "value": "Tween::TweenBehavior::AddObjectAngleTween2"
-              },
-              "parameters": [
-                "circles",
-                "Tween",
-                "\"rotate_circles\"",
-                "0",
-                "\"linear\"",
-                "0",
-                "no"
-              ]
-            },
-            {
-              "type": {
                 "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
               },
               "parameters": [
@@ -1702,6 +1653,15 @@
                 "0",
                 "0",
                 "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "menu_bg_extension::menu_bg::start_anim"
+              },
+              "parameters": [
+                "menu_bg",
+                ""
               ]
             }
           ],
@@ -1822,48 +1782,22 @@
           "conditions": [
             {
               "type": {
-                "value": "Tween::HasFinished"
+                "value": "menu_bg_extension::menu_bg::anim_stopped"
               },
               "parameters": [
-                "circles",
-                "Tween",
-                "\"rotate_circles\""
+                "menu_bg",
+                ""
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "Tween::RemoveTween"
+                "value": "menu_bg_extension::menu_bg::reload_anim"
               },
               "parameters": [
-                "circles",
-                "Tween",
-                "\"rotate_circles\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetAngle"
-              },
-              "parameters": [
-                "circles",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectAngleTween2"
-              },
-              "parameters": [
-                "circles",
-                "Tween",
-                "\"rotate_circles\"",
-                "360",
-                "\"linear\"",
-                "3",
-                "no"
+                "menu_bg",
+                ""
               ]
             }
           ]
@@ -1979,6 +1913,27 @@
                     "0",
                     "0",
                     "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    "=",
+                    "0-menu_bg.Width()/1.6",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "menu_bg_extension::menu_bg::stop_anim"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    ""
                   ]
                 }
               ]
@@ -2537,6 +2492,16 @@
                         "=",
                         "3"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "currently_saving_id",
+                        "=",
+                        "save_load_button.id"
+                      ]
                     }
                   ]
                 }
@@ -2808,10 +2773,20 @@
                     "text_field_custom4",
                     "500",
                     "500",
-                    "400",
+                    "850",
                     "50",
                     "25",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::set_text"
+                  },
+                  "parameters": [
+                    "text_field_custom4",
+                    "\"save_debug_value = \"+saved_data.debug",
+                    "="
                   ]
                 }
               ]
@@ -3006,6 +2981,27 @@
                     "0",
                     "0"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "menu_bg_extension::menu_bg::reload_anim"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    ""
+                  ]
                 }
               ]
             },
@@ -3124,29 +3120,54 @@
                       ]
                     }
                   ],
-                  "actions": [
+                  "actions": [],
+                  "events": [
                     {
-                      "type": {
-                        "value": "SetStringVariable"
-                      },
-                      "parameters": [
-                        "save_names[currently_saving_id-1]",
-                        "=",
-                        "text_field_custom1.get_text()+\" \"+ToString(currently_saving_id)"
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "save_names[currently_saving_id-1]",
+                            "=",
+                            "text_field_custom1.get_text()+\" \"+ToString(currently_saving_id)"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FileSystem::SaveVariableToJSONFileSync"
+                          },
+                          "parameters": [
+                            "save_names",
+                            "save_name_storage",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "saved_data.debug",
+                            "=",
+                            "currently_saving_id"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FileSystem::SaveVariableToJSONFileSync"
+                          },
+                          "parameters": [
+                            "saved_data",
+                            "save_name_storage+ToString(currently_saving_id)",
+                            ""
+                          ]
+                        }
                       ]
                     },
-                    {
-                      "type": {
-                        "value": "FileSystem::SaveVariableToJSONFileSync"
-                      },
-                      "parameters": [
-                        "save_names",
-                        "save_name_storage",
-                        ""
-                      ]
-                    }
-                  ],
-                  "events": [
                     {
                       "type": "BuiltinCommonInstructions::ForEach",
                       "object": "save_load_button",
@@ -3217,9 +3238,21 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "Quit"
+                        "value": "FileSystem::LoadVariableFromJSONFileSync"
                       },
                       "parameters": [
+                        "saved_data",
+                        "save_name_storage+ToString(currently_saving_id)",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "dialog_box_extension::Dialog_Box::delete"
+                      },
+                      "parameters": [
+                        "menu_dialog_box",
                         ""
                       ]
                     }
@@ -3477,270 +3510,6 @@
               ]
             }
           ]
-        },
-        {
-          "disabled": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "text_field_extension::text_field_custom::get_focus"
-              },
-              "parameters": [
-                "text_fields",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "AnyKeyPressed"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetStringVariable"
-              },
-              "parameters": [
-                "temp_string1",
-                "=",
-                "LastPressedKey()"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "StringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "!=",
-                    "SubStr(text_fields.get_text(),StrLength(text_fields.get_text())-1,StrLength(text_fields.get_text()))"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "temp_boolean1",
-                    "False",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "StringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "!=",
-                    "SubStr(text_fields.get_text(),StrLength(text_fields.get_text())-1,StrLength(text_fields.get_text()))"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "temp_boolean1",
-                    "True",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "StringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "=",
-                    "\"Back\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "text_field_extension::text_field_custom::set_text"
-                  },
-                  "parameters": [
-                    "text_fields",
-                    "SubStr(text_fields.get_text(),0,StrLength(text_fields.get_text())-1)",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "=",
-                    "\"\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "StringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "=",
-                    "\"Return\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "=",
-                    "\"\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "StringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "=",
-                    "\"Escape\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "=",
-                    "\"\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "StringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "=",
-                    "\"Space\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "temp_string1",
-                    "=",
-                    "\" \""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "temp_boolean1",
-                    "False",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "text_field_extension::text_field_custom::set_text"
-                  },
-                  "parameters": [
-                    "text_fields",
-                    "text_fields.get_text()+temp_string1",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "temp_boolean1",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "text_field_extension::text_field_custom::set_text"
-                  },
-                  "parameters": [
-                    "text_fields",
-                    "text_fields.get_text()+temp_string1",
-                    ""
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ],
       "layers": [
@@ -3957,6 +3726,674 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "author": "",
+      "category": "",
+      "extensionNamespace": "",
+      "fullName": "",
+      "gdevelopVersion": "",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "menu_bg_extension",
+      "previewIconUrl": "",
+      "shortDescription": "",
+      "version": "",
+      "description": "",
+      "tags": [],
+      "authorIds": [],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": [
+        {
+          "areaMaxX": 1400,
+          "areaMaxY": 720,
+          "areaMaxZ": 1,
+          "areaMinX": 0,
+          "areaMinY": 0,
+          "areaMinZ": 0,
+          "defaultName": "",
+          "description": "",
+          "fullName": "",
+          "isUsingLegacyInstancesRenderer": false,
+          "name": "menu_bg",
+          "objects": [
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "blue_circle",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "assets\\circle4.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 1024,
+                                "y": 0
+                              },
+                              {
+                                "x": 1024,
+                                "y": 1024
+                              },
+                              {
+                                "x": 0,
+                                "y": 1024
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "pink_circle",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "assets\\circle3.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 1,
+                                "y": 1
+                              },
+                              {
+                                "x": 1023,
+                                "y": 1
+                              },
+                              {
+                                "x": 1023,
+                                "y": 1023
+                              },
+                              {
+                                "x": 1,
+                                "y": 1023
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "red_circle",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "assets\\circle2.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 2,
+                                "y": 19
+                              },
+                              {
+                                "x": 1022,
+                                "y": 19
+                              },
+                              {
+                                "x": 1022,
+                                "y": 1005
+                              },
+                              {
+                                "x": 2,
+                                "y": 1005
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "green_circle",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "assets\\circle1.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 1024,
+                                "y": 0
+                              },
+                              {
+                                "x": 1024,
+                                "y": 1024
+                              },
+                              {
+                                "x": 0,
+                                "y": 1024
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "height": 720,
+              "name": "bg_tile",
+              "texture": "assets\\bg.png",
+              "type": "TiledSpriteObject::TiledSprite",
+              "width": 1400,
+              "variables": [],
+              "effects": [],
+              "behaviors": []
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "green_circle"
+              },
+              {
+                "objectName": "red_circle"
+              },
+              {
+                "objectName": "pink_circle"
+              },
+              {
+                "objectName": "blue_circle"
+              },
+              {
+                "objectName": "bg_tile"
+              }
+            ]
+          },
+          "objectsGroups": [
+            {
+              "name": "circles",
+              "objects": [
+                {
+                  "name": "blue_circle"
+                },
+                {
+                  "name": "pink_circle"
+                },
+                {
+                  "name": "red_circle"
+                },
+                {
+                  "name": "green_circle"
+                }
+              ]
+            }
+          ],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 360,
+              "keepRatio": true,
+              "layer": "",
+              "locked": true,
+              "name": "green_circle",
+              "persistentUuid": "97dc36c0-4e0b-44dd-b39e-ca336470ab9f",
+              "width": 360,
+              "x": 0,
+              "y": 360,
+              "zOrder": 7,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 360,
+              "keepRatio": true,
+              "layer": "",
+              "locked": true,
+              "name": "red_circle",
+              "persistentUuid": "79182a26-b745-427b-89ae-5afb7eeedbe4",
+              "width": 360,
+              "x": 0,
+              "y": 0,
+              "zOrder": 8,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 360,
+              "keepRatio": true,
+              "layer": "",
+              "locked": true,
+              "name": "pink_circle",
+              "persistentUuid": "285f9593-cc4d-49d1-9a3b-a6b0e73a1dc8",
+              "width": 360,
+              "x": 1040,
+              "y": 0,
+              "zOrder": 9,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 360,
+              "keepRatio": true,
+              "layer": "",
+              "locked": true,
+              "name": "blue_circle",
+              "persistentUuid": "e3bbdd19-287a-45c0-9d89-a6f610ed4bb5",
+              "width": 360,
+              "x": 1040,
+              "y": 360,
+              "zOrder": 10,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "locked": true,
+              "name": "bg_tile",
+              "persistentUuid": "46fc4790-4ca3-4509-9542-e9ee35ecd54b",
+              "width": 0,
+              "x": 0,
+              "y": 0,
+              "zOrder": 6,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            }
+          ],
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "start_anim",
+              "sentence": "Start initial animation of _PARAM0_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectAngleTween2"
+                      },
+                      "parameters": [
+                        "circles",
+                        "Tween",
+                        "\"rotate_circles\"",
+                        "0",
+                        "\"linear\"",
+                        "0",
+                        "no"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "menu_bg_extension::menu_bg",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Condition",
+              "name": "anim_stopped",
+              "sentence": "Animation of _PARAM0_ has looped",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Tween::HasFinished"
+                      },
+                      "parameters": [
+                        "circles",
+                        "Tween",
+                        "\"rotate_circles\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Tween::HasFinished"
+                      },
+                      "parameters": [
+                        "circles",
+                        "Tween",
+                        "\"rotate_circles\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "False"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "menu_bg_extension::menu_bg",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "reload_anim",
+              "sentence": "Reload _PARAM0_ animation loop",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "circles",
+                        "Tween",
+                        "\"rotate_circles\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetAngle"
+                      },
+                      "parameters": [
+                        "circles",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectAngleTween2"
+                      },
+                      "parameters": [
+                        "circles",
+                        "Tween",
+                        "\"rotate_circles\"",
+                        "360",
+                        "\"linear\"",
+                        "3",
+                        "no"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "menu_bg_extension::menu_bg",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "stop_anim",
+              "sentence": "Stop the animation of _PARAM0_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "circles",
+                        "Tween",
+                        "\"rotate_circles\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "menu_bg_extension::menu_bg",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [],
+          "variants": []
+        }
+      ]
+    },
     {
       "author": "",
       "category": "",
@@ -10258,59 +10695,6 @@
         "gridAlpha": 0.8,
         "snap": false,
         "zoomFactor": 0.5,
-        "windowMask": false
-      }
-    },
-    {
-      "associatedLayout": "main_menu",
-      "name": "backup",
-      "instances": [
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 295,
-          "keepRatio": true,
-          "layer": "",
-          "name": "dialog_bg",
-          "persistentUuid": "4686f90c-43b5-4dda-b373-e30f41feaa74",
-          "width": 800,
-          "x": 538,
-          "y": -381,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 167,
-          "keepRatio": true,
-          "layer": "",
-          "name": "dialog_text",
-          "persistentUuid": "03cadca8-d614-48ae-9855-6c58e133527d",
-          "width": 640,
-          "x": 676,
-          "y": -272,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        }
-      ],
-      "editionSettings": {
-        "grid": false,
-        "gridType": "rectangular",
-        "gridWidth": 32,
-        "gridHeight": 32,
-        "gridOffsetX": 0,
-        "gridOffsetY": 0,
-        "gridColor": 10401023,
-        "gridAlpha": 0.8,
-        "snap": false,
-        "zoomFactor": 0.4378826865860795,
         "windowMask": false
       }
     }
