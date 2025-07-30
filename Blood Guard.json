@@ -1966,8 +1966,45 @@
                   ]
                 }
               ],
-              "actions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "functions_extension::clear_main_menu"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "functions_extension::get_main_menu_inside"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "functions_extension::create_scene_with_number"
+                      },
+                      "parameters": [
+                        "",
+                        "functions_extension::get_old_scene()",
+                        ""
+                      ]
+                    }
+                  ]
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -1982,15 +2019,6 @@
                     }
                   ],
                   "actions": [
-                    {
-                      "type": {
-                        "value": "functions_extension::clear_main_menu"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    },
                     {
                       "type": {
                         "value": "Delete"
@@ -2052,80 +2080,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": true,
-                        "value": "functions_extension::get_main_menu_inside"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "old_window_scene_id",
-                        "=",
-                        "functions_extension::get_old_scene()"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "functions_extension::clear_main_menu"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "functions_extension::clear_inside_main_menu_id"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    }
-                  ],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "NumberVariable"
-                          },
-                          "parameters": [
-                            "old_window_scene_id",
-                            "=",
-                            "1"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "functions_extension::create_scene_with_number"
-                          },
-                          "parameters": [
-                            "",
-                            "old_window_scene_id",
-                            ""
-                          ]
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             },
@@ -2179,7 +2133,7 @@
                       },
                       "parameters": [
                         "",
-                        "old_window_scene_id",
+                        "functions_extension::get_scene_id_change()",
                         ""
                       ]
                     }
@@ -2213,7 +2167,7 @@
                 },
                 {
                   "type": {
-                    "value": "functions_extension::clear_new_game_choose"
+                    "value": "functions_extension::reset_scene_change"
                   },
                   "parameters": [
                     "",
@@ -2239,6 +2193,15 @@
                   "actions": [
                     {
                       "type": {
+                        "value": "functions_extension::toggle_main_menu"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
                         "value": "Delete"
                       },
                       "parameters": [
@@ -2261,15 +2224,6 @@
                       },
                       "parameters": [
                         "menu_dialog_box",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "functions_extension::reset_main_menu"
-                      },
-                      "parameters": [
-                        "",
                         ""
                       ]
                     },
@@ -2303,6 +2257,236 @@
                       },
                       "parameters": [
                         "menu_bg",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::create"
+                      },
+                      "parameters": [
+                        "text_field_custom1",
+                        "500",
+                        "200",
+                        "600",
+                        "50",
+                        "25",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::set_text"
+                      },
+                      "parameters": [
+                        "text_field_custom1",
+                        "\"save_debug_value = \"+saved_data.debug+\" old \"+ToString(functions_extension::get_old_scene())+\" scene_change \"+ToString(functions_extension::get_scene_id_change())",
+                        "="
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "temp_number1",
+                        "=",
+                        "4"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "functions_extension::toggle_main_menu"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "level_objects",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::delete"
+                      },
+                      "parameters": [
+                        "text_fields",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "dialog_box_extension::Dialog_Box::delete"
+                      },
+                      "parameters": [
+                        "menu_dialog_box",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                      },
+                      "parameters": [
+                        "",
+                        "\"options\"",
+                        "0",
+                        "0",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::create"
+                      },
+                      "parameters": [
+                        "text_field_custom1",
+                        "500",
+                        "200",
+                        "600",
+                        "50",
+                        "25",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::create"
+                      },
+                      "parameters": [
+                        "text_field_custom2",
+                        "500",
+                        "300",
+                        "400",
+                        "50",
+                        "25",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::create"
+                      },
+                      "parameters": [
+                        "text_field_custom3",
+                        "500",
+                        "400",
+                        "400",
+                        "50",
+                        "25",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::create"
+                      },
+                      "parameters": [
+                        "text_field_custom4",
+                        "500",
+                        "500",
+                        "850",
+                        "50",
+                        "25",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::set_text"
+                      },
+                      "parameters": [
+                        "text_field_custom1",
+                        "\"save_debug_value = \"+saved_data.debug+\" old \"+ToString(functions_extension::get_old_scene())+\" scene_change \"+ToString(functions_extension::get_scene_id_change())",
+                        "="
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "temp_number1",
+                        "=",
+                        "5"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "functions_extension::toggle_main_menu"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "level_objects",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "text_field_extension::text_field_custom::delete"
+                      },
+                      "parameters": [
+                        "text_fields",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "dialog_box_extension::Dialog_Box::delete"
+                      },
+                      "parameters": [
+                        "menu_dialog_box",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                      },
+                      "parameters": [
+                        "",
+                        "\"credits\"",
+                        "0",
+                        "0",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "refresh_credits_text",
+                        "True",
                         ""
                       ]
                     }
@@ -2396,6 +2580,15 @@
               "actions": [
                 {
                   "type": {
+                    "value": "functions_extension::toggle_main_menu"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "Delete"
                   },
                   "parameters": [
@@ -2423,15 +2616,6 @@
                 },
                 {
                   "type": {
-                    "value": "functions_extension::reset_main_menu"
-                  },
-                  "parameters": [
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
                   },
                   "parameters": [
@@ -2439,16 +2623,6 @@
                     "\"save_game\"",
                     "0",
                     "0",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "saved_data.current_scene_id",
-                    "=",
                     "0"
                   ]
                 }
@@ -2578,6 +2752,15 @@
               "actions": [
                 {
                   "type": {
+                    "value": "functions_extension::toggle_main_menu"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "Delete"
                   },
                   "parameters": [
@@ -2600,15 +2783,6 @@
                   },
                   "parameters": [
                     "menu_dialog_box",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "functions_extension::reset_main_menu"
-                  },
-                  "parameters": [
-                    "",
                     ""
                   ]
                 },
@@ -3149,6 +3323,33 @@
                     "options_button",
                     ""
                   ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "functions_extension::create_scene_with_number"
+                  },
+                  "parameters": [
+                    "",
+                    "4",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "options_button",
+                    ""
+                  ]
                 },
                 {
                   "type": {
@@ -3158,6 +3359,15 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "functions_extension::toggle_main_menu"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                },
                 {
                   "type": {
                     "value": "Delete"
@@ -3182,15 +3392,6 @@
                   },
                   "parameters": [
                     "menu_dialog_box",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "functions_extension::reset_main_menu"
-                  },
-                  "parameters": [
-                    "",
                     ""
                   ]
                 },
@@ -3267,24 +3468,41 @@
                     "value": "text_field_extension::text_field_custom::set_text"
                   },
                   "parameters": [
-                    "text_field_custom4",
-                    "\"save_debug_value = \"+saved_data.debug",
+                    "text_field_custom1",
+                    "\"save_debug_value = \"+saved_data.debug+\" old \"+ToString(functions_extension::get_old_scene())+\" scene_change \"+ToString(functions_extension::get_scene_id_change())",
                     "="
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "saved_data.current_scene_id",
-                    "=",
-                    "0"
                   ]
                 }
               ]
             },
             {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "credits_button",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "functions_extension::create_scene_with_number"
+                  },
+                  "parameters": [
+                    "",
+                    "5",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -3304,6 +3522,15 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "functions_extension::toggle_main_menu"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                },
                 {
                   "type": {
                     "value": "Delete"
@@ -3333,15 +3560,6 @@
                 },
                 {
                   "type": {
-                    "value": "functions_extension::reset_main_menu"
-                  },
-                  "parameters": [
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
                   },
                   "parameters": [
@@ -3360,16 +3578,6 @@
                     "refresh_credits_text",
                     "True",
                     ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "saved_data.current_scene_id",
-                    "=",
-                    "0"
                   ]
                 }
               ]
@@ -4237,52 +4445,6 @@
         {
           "fullName": "",
           "functionType": "Action",
-          "name": "reset_main_menu",
-          "sentence": "Set behaviour back to expecting the preliminary press of ESC",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "main_menu_activated",
-                    "False",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "inside_main_menu",
-                    "False",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "main_menu_old_scene",
-                    "=",
-                    "0"
-                  ]
-                }
-              ]
-            }
-          ],
-          "parameters": [],
-          "objectGroups": []
-        },
-        {
-          "fullName": "",
-          "functionType": "Action",
           "name": "set_main_menu",
           "sentence": "Functions go back to Main Menu with old scene as _PARAM1_",
           "events": [
@@ -4302,22 +4464,22 @@
                 },
                 {
                   "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "inside_main_menu",
-                    "Toggle",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
                     "main_menu_old_scene",
                     "=",
                     "old_scene_id"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "inside_main_menu",
+                    "Toggle",
+                    ""
                   ]
                 }
               ]
@@ -4330,6 +4492,32 @@
               "type": "expression"
             }
           ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "go_inside_main_menu",
+          "sentence": "Go inside Main Menu",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "inside_main_menu",
+                    "True",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
           "objectGroups": []
         },
         {
@@ -4379,23 +4567,8 @@
                     "False",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "main_menu_old_scene",
-                    "=",
-                    "0"
-                  ]
                 }
               ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": []
             }
           ],
           "parameters": [],
@@ -4555,32 +4728,6 @@
         {
           "fullName": "",
           "functionType": "Action",
-          "name": "choose_new_game",
-          "sentence": "Press back to New Game",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "new_game_pressed",
-                    "True",
-                    ""
-                  ]
-                }
-              ]
-            }
-          ],
-          "parameters": [],
-          "objectGroups": []
-        },
-        {
-          "fullName": "",
-          "functionType": "Action",
           "name": "create_scene_with_number",
           "sentence": "Create scene with number _PARAM1_",
           "events": [
@@ -4697,16 +4844,6 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "scene_id",
-                    "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetBooleanVariable"
                   },
                   "parameters": [
@@ -4723,85 +4860,30 @@
         },
         {
           "fullName": "",
-          "functionType": "Condition",
-          "name": "get_new_game_choose",
-          "sentence": "Check whether New Game is requested",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "new_game_pressed",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetReturnBoolean"
-                  },
-                  "parameters": [
-                    "True"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "new_game_pressed",
-                    "False",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetReturnBoolean"
-                  },
-                  "parameters": [
-                    "False"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": []
-            }
-          ],
-          "parameters": [],
-          "objectGroups": []
-        },
-        {
-          "fullName": "",
           "functionType": "Action",
-          "name": "clear_new_game_choose",
-          "sentence": "Clear New Scene request",
+          "name": "toggle_main_menu",
+          "sentence": "Toggle main menu",
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "main_menu_old_scene",
+                    "=",
+                    "scene_id"
+                  ]
+                },
                 {
                   "type": {
                     "value": "SetBooleanVariable"
                   },
                   "parameters": [
-                    "new_game_pressed",
+                    "inside_main_menu",
                     "False",
                     ""
                   ]
