@@ -2339,6 +2339,16 @@
                         "menu_bg",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "functions_extension::set_scene_back_without_request"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        ""
+                      ]
                     }
                   ],
                   "events": [
@@ -4576,6 +4586,38 @@
           "parameters": [
             {
               "description": "",
+              "name": "scene_number",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "set_scene_back_without_request",
+          "sentence": "Set scene back without request to be used with Escape. Scene back is _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "scene_id",
+                    "=",
+                    "scene_number"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Scene to go back to",
               "name": "scene_number",
               "type": "expression"
             }
