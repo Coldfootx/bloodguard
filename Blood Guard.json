@@ -2178,18 +2178,7 @@
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "saved_data.current_scene_id",
-                        "=",
-                        "1"
-                      ]
-                    }
-                  ],
+                  "conditions": [],
                   "actions": [
                     {
                       "type": {
@@ -2229,18 +2218,6 @@
                     },
                     {
                       "type": {
-                        "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
-                      },
-                      "parameters": [
-                        "",
-                        "\"new_game\"",
-                        "0",
-                        "0",
-                        "0"
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "MettreXY"
                       },
                       "parameters": [
@@ -2258,6 +2235,35 @@
                       "parameters": [
                         "menu_bg",
                         ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "saved_data.current_scene_id",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                      },
+                      "parameters": [
+                        "",
+                        "\"new_game\"",
+                        "0",
+                        "0",
+                        "0"
                       ]
                     },
                     {
@@ -2303,42 +2309,6 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "functions_extension::toggle_main_menu"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "level_objects",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "text_field_extension::text_field_custom::delete"
-                      },
-                      "parameters": [
-                        "text_fields",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "dialog_box_extension::Dialog_Box::delete"
-                      },
-                      "parameters": [
-                        "menu_dialog_box",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
                       },
                       "parameters": [
@@ -2347,6 +2317,27 @@
                         "0",
                         "0",
                         "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "menu_bg",
+                        "=",
+                        "0",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "menu_bg_extension::menu_bg::reload_anim"
+                      },
+                      "parameters": [
+                        "menu_bg",
+                        ""
                       ]
                     }
                   ],
@@ -2470,42 +2461,6 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "functions_extension::toggle_main_menu"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "level_objects",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "text_field_extension::text_field_custom::delete"
-                      },
-                      "parameters": [
-                        "text_fields",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "dialog_box_extension::Dialog_Box::delete"
-                      },
-                      "parameters": [
-                        "menu_dialog_box",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
                       },
                       "parameters": [
@@ -2514,6 +2469,27 @@
                         "0",
                         "0",
                         "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "menu_bg",
+                        "=",
+                        "0",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "menu_bg_extension::menu_bg::reload_anim"
+                      },
+                      "parameters": [
+                        "menu_bg",
+                        ""
                       ]
                     }
                   ],
@@ -2637,42 +2613,6 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "functions_extension::toggle_main_menu"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "level_objects",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "text_field_extension::text_field_custom::delete"
-                      },
-                      "parameters": [
-                        "text_fields",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "dialog_box_extension::Dialog_Box::delete"
-                      },
-                      "parameters": [
-                        "menu_dialog_box",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
                       },
                       "parameters": [
@@ -2681,6 +2621,27 @@
                         "0",
                         "0",
                         "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "menu_bg",
+                        "=",
+                        "0",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "menu_bg_extension::menu_bg::reload_anim"
+                      },
+                      "parameters": [
+                        "menu_bg",
+                        ""
                       ]
                     },
                     {
@@ -2768,42 +2729,6 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "functions_extension::toggle_main_menu"
-                      },
-                      "parameters": [
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "level_objects",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "text_field_extension::text_field_custom::delete"
-                      },
-                      "parameters": [
-                        "text_fields",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "dialog_box_extension::Dialog_Box::delete"
-                      },
-                      "parameters": [
-                        "menu_dialog_box",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
                       },
                       "parameters": [
@@ -2812,6 +2737,27 @@
                         "0",
                         "0",
                         "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "menu_bg",
+                        "=",
+                        "0",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "menu_bg_extension::menu_bg::reload_anim"
+                      },
+                      "parameters": [
+                        "menu_bg",
+                        ""
                       ]
                     },
                     {
