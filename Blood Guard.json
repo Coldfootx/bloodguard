@@ -735,6 +735,11 @@
               "name": "debug",
               "type": "number",
               "value": 100
+            },
+            {
+              "name": "real_game_menu_id",
+              "type": "number",
+              "value": 0
             }
           ]
         },
@@ -2236,6 +2241,16 @@
                         "menu_bg",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "saved_data.real_game_menu_id",
+                        "=",
+                        "1"
+                      ]
                     }
                   ]
                 },
@@ -2346,7 +2361,7 @@
                       },
                       "parameters": [
                         "",
-                        "1",
+                        "saved_data.real_game_menu_id",
                         ""
                       ]
                     }
@@ -2499,6 +2514,16 @@
                       },
                       "parameters": [
                         "menu_bg",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "functions_extension::set_scene_back_without_request"
+                      },
+                      "parameters": [
+                        "",
+                        "saved_data.real_game_menu_id",
                         ""
                       ]
                     }
@@ -2719,6 +2744,16 @@
                         "\"save_debug_value = \"+saved_data.debug+\" old \"+ToString(functions_extension::get_old_scene())+\" scene_change \"+ToString(functions_extension::get_scene_id_change())",
                         "="
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "functions_extension::set_scene_back_without_request"
+                      },
+                      "parameters": [
+                        "",
+                        "saved_data.real_game_menu_id",
+                        ""
+                      ]
                     }
                   ]
                 },
@@ -2777,6 +2812,16 @@
                       "parameters": [
                         "refresh_credits_text",
                         "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "functions_extension::set_scene_back_without_request"
+                      },
+                      "parameters": [
+                        "",
+                        "saved_data.real_game_menu_id",
                         ""
                       ]
                     }
