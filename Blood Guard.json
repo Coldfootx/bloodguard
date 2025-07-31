@@ -6311,7 +6311,17 @@
                       "parameters": [
                         "Object",
                         "=",
-                        "0-y_limit"
+                        "y_limit"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "y_limit"
                       ]
                     },
                     {
@@ -6919,7 +6929,17 @@
                       "parameters": [
                         "Object",
                         "=",
-                        "0-y_limit"
+                        "y_limit"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "y_limit"
                       ]
                     },
                     {
