@@ -1,0 +1,37 @@
+{
+  "associatedLayout": "main_menu",
+  "name": "options",
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 66.66666666666666,
+      "height": 66.66666666666666,
+      "keepRatio": true,
+      "layer": "",
+      "locked": true,
+      "name": "back_button",
+      "persistentUuid": "058f89f5-9103-42af-9322-b770d522a676",
+      "width": 200,
+      "x": 800,
+      "y": 630,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "editionSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.5,
+    "windowMask": false
+  }
+}

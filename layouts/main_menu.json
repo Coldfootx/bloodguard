@@ -1,0 +1,3732 @@
+{
+  "b": 0,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "main_95menu",
+  "name": "main_menu",
+  "r": 0,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 0,
+  "uiSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.39251611754882265,
+    "windowMask": false
+  },
+  "objectsGroups": [
+    {
+      "name": "circles",
+      "objects": [
+        {
+          "name": "green_circle"
+        },
+        {
+          "name": "red_circle"
+        },
+        {
+          "name": "pink_circle"
+        },
+        {
+          "name": "blue_circle"
+        }
+      ]
+    },
+    {
+      "name": "level_objects",
+      "objects": [
+        {
+          "name": "logo"
+        },
+        {
+          "name": "new_game_button"
+        },
+        {
+          "name": "save_game_button"
+        },
+        {
+          "name": "load_game_button"
+        },
+        {
+          "name": "options_button"
+        },
+        {
+          "name": "credits_button"
+        },
+        {
+          "name": "quit_game_button"
+        },
+        {
+          "name": "credits_area"
+        },
+        {
+          "name": "help_button"
+        },
+        {
+          "name": "back_button"
+        },
+        {
+          "name": "help_text"
+        },
+        {
+          "name": "save_load_button"
+        },
+        {
+          "name": "save_load_name"
+        },
+        {
+          "name": "save_load_name_save_confirm"
+        },
+        {
+          "name": "save_load_name_save_cancel"
+        },
+        {
+          "name": "escape_reminder_label"
+        }
+      ]
+    },
+    {
+      "name": "text_fields",
+      "objects": [
+        {
+          "name": "text_field_custom1"
+        },
+        {
+          "name": "text_field_custom2"
+        },
+        {
+          "name": "text_field_custom3"
+        },
+        {
+          "name": "text_field_custom4"
+        }
+      ]
+    },
+    {
+      "name": "menu_bg",
+      "objects": [
+        {
+          "name": "bg_tile"
+        },
+        {
+          "name": "green_circle"
+        },
+        {
+          "name": "red_circle"
+        },
+        {
+          "name": "pink_circle"
+        },
+        {
+          "name": "blue_circle"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "credits_text",
+      "type": "string",
+      "value": "First and foremost thanks to my friends for all the important guidance!\n\nColored summoning circles in menus by Johndh https://opengameart.org/users/johndh\n\nMerged Full Background as purple text field background by Wishforge Games https://wishforge.games"
+    },
+    {
+      "name": "refresh_credits_text",
+      "type": "boolean",
+      "value": true
+    },
+    {
+      "name": "save_load_name_width",
+      "type": "number",
+      "value": 400
+    },
+    {
+      "name": "save_load_name_height",
+      "type": "number",
+      "value": 70
+    },
+    {
+      "name": "temp_number1",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "save_load_button_width",
+      "type": "number",
+      "value": 400
+    },
+    {
+      "name": "save_load_button_height",
+      "type": "number",
+      "value": 70
+    },
+    {
+      "name": "save_names",
+      "type": "structure",
+      "children": []
+    },
+    {
+      "name": "save_name_header",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "slot_amount",
+      "type": "number",
+      "value": 9
+    },
+    {
+      "name": "temp_string1",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "save_confirm_x_prefix",
+      "type": "number",
+      "value": 500
+    },
+    {
+      "name": "current_id",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "refresh_save_game_text_field",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "dialog_box_id",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "save_name_storage",
+      "type": "string",
+      "value": "blood_guard_save_name_storage"
+    },
+    {
+      "name": "currently_saving_id",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "temp_boolean1",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "saved_data",
+      "type": "structure",
+      "children": [
+        {
+          "name": "current_scene_id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "debug",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "real_game_menu_id",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "old_window_scene_id",
+      "type": "number",
+      "value": 0
+    }
+  ],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "dialog_layer",
+      "locked": true,
+      "name": "menu_dialog_box",
+      "persistentUuid": "f7198603-e926-46c4-9df1-542952fca6ba",
+      "width": 0,
+      "x": 633,
+      "y": -348,
+      "zOrder": 73,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "dialog_layer",
+      "locked": true,
+      "name": "text_field_custom1",
+      "persistentUuid": "f1b0a9b5-7def-430c-a2f2-5dced04b208d",
+      "width": 0,
+      "x": 40,
+      "y": -124,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "dialog_layer",
+      "locked": true,
+      "name": "text_field_custom2",
+      "persistentUuid": "00d2e443-7359-406a-9335-a5702154f2b0",
+      "width": 0,
+      "x": 40,
+      "y": -206,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "dialog_layer",
+      "locked": true,
+      "name": "text_field_custom3",
+      "persistentUuid": "bb1d15d4-4840-4f0f-bf19-71281455dd90",
+      "width": 0,
+      "x": 40,
+      "y": -287,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "dialog_layer",
+      "locked": true,
+      "name": "text_field_custom4",
+      "persistentUuid": "7508be7d-7aba-455f-8d75-ab0ae3ec0f98",
+      "width": 0,
+      "x": 40,
+      "y": -366,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "bg_layer",
+      "locked": true,
+      "name": "menu_bg",
+      "persistentUuid": "5e602144-0f73-4149-895f-04c4cbbea2be",
+      "sealed": true,
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Functions_Extension",
+      "persistentUuid": "0d9035fe-9f4f-464b-8bc4-f4f149de5818",
+      "width": 0,
+      "x": 777,
+      "y": 925,
+      "zOrder": 75,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "name": "Functions_Extension",
+      "type": "functions_extension::Functions_Extension",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
+    },
+    {
+      "assetStoreId": "",
+      "name": "menu_bg",
+      "type": "menu_bg_extension::menu_bg",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
+    },
+    {
+      "assetStoreId": "",
+      "name": "text_field_custom1",
+      "type": "text_field_extension::text_field_custom",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "logo",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\logo.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 694,
+                        "y": 8
+                      },
+                      {
+                        "x": 694,
+                        "y": 185
+                      },
+                      {
+                        "x": 8,
+                        "y": 185
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "green_circle",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\circle1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 1024
+                      },
+                      {
+                        "x": 0,
+                        "y": 1024
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "red_circle",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\circle2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 2,
+                        "y": 19
+                      },
+                      {
+                        "x": 1022,
+                        "y": 19
+                      },
+                      {
+                        "x": 1022,
+                        "y": 1005
+                      },
+                      {
+                        "x": 2,
+                        "y": 1005
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "pink_circle",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\circle3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 1,
+                        "y": 1
+                      },
+                      {
+                        "x": 1023,
+                        "y": 1
+                      },
+                      {
+                        "x": 1023,
+                        "y": 1023
+                      },
+                      {
+                        "x": 1,
+                        "y": 1023
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "blue_circle",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\circle4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 1024
+                      },
+                      {
+                        "x": 0,
+                        "y": 1024
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "height": 320,
+      "name": "bg_tile",
+      "texture": "assets\\bg.png",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 544,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "HorizontalTiledSpriteParallax",
+          "type": "Parallax::HorizontalTiledSpriteParallax",
+          "ParallaxFactor": 0.5,
+          "FollowedLayer": ""
+        }
+      ]
+    },
+    {
+      "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+      "name": "new_game_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Red Button With Gold Frame",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "New Game"
+      }
+    },
+    {
+      "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+      "name": "save_game_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Red Button With Gold Frame",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "Save Game"
+      }
+    },
+    {
+      "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+      "name": "load_game_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Red Button With Gold Frame",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "Load Game"
+      }
+    },
+    {
+      "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+      "name": "options_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Red Button With Gold Frame",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "Options"
+      }
+    },
+    {
+      "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+      "name": "credits_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Red Button With Gold Frame",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "Credits"
+      }
+    },
+    {
+      "assetStoreId": "1d520e09dda1f2a1eae840a3133286acfff11151176c0eb2718d9f6a186d13c3",
+      "name": "quit_game_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Red Button With Gold Frame",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "Quit Game"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "credits_area",
+      "type": "TextInput::TextInputObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "initialValue": "",
+        "placeholder": "Touch to start typing",
+        "fontResourceName": "assets\\Roboto-Regular.ttf",
+        "fontSize": 20,
+        "inputType": "text area",
+        "textColor": "0;0;0",
+        "fillColor": "255;255;255",
+        "fillOpacity": 255,
+        "borderColor": "0;0;0",
+        "borderOpacity": 255,
+        "borderWidth": 1,
+        "readOnly": true,
+        "disabled": false,
+        "spellCheck": false,
+        "paddingX": 2,
+        "paddingY": 1,
+        "textAlign": "left",
+        "maxLength": 0
+      }
+    },
+    {
+      "assetStoreId": "0364dbe0c9a504055bcfd65a3e898b58b0cb0aea76c15cc0b9961815b88ba4e6",
+      "name": "help_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Green Button With Stone Frame",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 2,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "Help"
+      }
+    },
+    {
+      "assetStoreId": "82b8caa7b55342f43b24f169b4374e9224e1a78c05a87f8689663e7c4a6bad69",
+      "name": "back_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Medieval Button Brown",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 4,
+        "BottomPadding": 10,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "Back"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "help_text",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "License\nGPL-3.0\n\nVersion\nv0.0.2\n\nMaker\nColdfoot\n\nServices\ngithub.com\nopengameart.org\ncooltext.com\ntinyurl.com\n",
+      "font": "assets\\Roboto-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "License\nGPL-3.0\n\nVersion\nv0.0.2\n\nMaker\nColdfoot\n\nServices\ngithub.com\nopengameart.org\ncooltext.com\ntinyurl.com\n",
+        "font": "assets\\Roboto-Regular.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "26f7912e497fefccd32817a0c24533c9304633b47c6e556065dc498219877e81",
+      "name": "save_load_button",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "On Screen Controls Button",
+      "variables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "load",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 1,
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0.2,
+        "LabelText": "Button"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "save_load_name",
+      "type": "TextInput::TextInputObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "initialValue": "",
+        "placeholder": "Touch to start typing",
+        "fontResourceName": "assets\\Roboto-Regular.ttf",
+        "fontSize": 24,
+        "inputType": "text",
+        "textColor": "0;0;0",
+        "fillColor": "255;255;255",
+        "fillOpacity": 255,
+        "borderColor": "0;0;0",
+        "borderOpacity": 255,
+        "borderWidth": 1,
+        "readOnly": false,
+        "disabled": false,
+        "spellCheck": false,
+        "paddingX": 2,
+        "paddingY": 1,
+        "textAlign": "left",
+        "maxLength": 0
+      }
+    },
+    {
+      "assetStoreId": "72c8adcfb9187ebb5fcfbcd75bc18c74d6af5507e7c482cadcfad28f8011b387",
+      "name": "save_load_name_save_confirm",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Orange Bubble Button",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "LeftPadding": 10,
+        "RightPadding": 10,
+        "PressedLabelOffsetY": 2,
+        "LabelText": "Save"
+      }
+    },
+    {
+      "assetStoreId": "72c8adcfb9187ebb5fcfbcd75bc18c74d6af5507e7c482cadcfad28f8011b387",
+      "name": "save_load_name_save_cancel",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Orange Bubble Button",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "BottomPadding": 0,
+        "TopPadding": 0,
+        "LeftPadding": 10,
+        "RightPadding": 10,
+        "PressedLabelOffsetY": 2,
+        "LabelText": "Cancel"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "menu_dialog_box",
+      "type": "dialog_box_extension::Dialog_Box",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "shown2": false
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "text_field_custom2",
+      "type": "text_field_extension::text_field_custom",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
+    },
+    {
+      "assetStoreId": "",
+      "name": "text_field_custom3",
+      "type": "text_field_extension::text_field_custom",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
+    },
+    {
+      "assetStoreId": "",
+      "name": "text_field_custom4",
+      "type": "text_field_extension::text_field_custom",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "escape_reminder_label",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Go to Options menu and back with the Escape key!",
+      "font": "assets\\Roboto-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Go to Options menu and back with the Escape key!",
+        "font": "assets\\Roboto-Regular.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "color": "0;0;0"
+      }
+    }
+  ],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "logo"
+      },
+      {
+        "objectName": "green_circle"
+      },
+      {
+        "objectName": "red_circle"
+      },
+      {
+        "objectName": "pink_circle"
+      },
+      {
+        "objectName": "blue_circle"
+      },
+      {
+        "objectName": "bg_tile"
+      },
+      {
+        "objectName": "new_game_button"
+      },
+      {
+        "objectName": "save_game_button"
+      },
+      {
+        "objectName": "load_game_button"
+      },
+      {
+        "objectName": "options_button"
+      },
+      {
+        "objectName": "credits_button"
+      },
+      {
+        "objectName": "quit_game_button"
+      },
+      {
+        "objectName": "credits_area"
+      },
+      {
+        "objectName": "help_button"
+      },
+      {
+        "objectName": "back_button"
+      },
+      {
+        "objectName": "help_text"
+      },
+      {
+        "objectName": "save_load_button"
+      },
+      {
+        "objectName": "save_load_name"
+      },
+      {
+        "objectName": "save_load_name_save_confirm"
+      },
+      {
+        "objectName": "save_load_name_save_cancel"
+      },
+      {
+        "objectName": "menu_dialog_box"
+      },
+      {
+        "objectName": "text_field_custom1"
+      },
+      {
+        "objectName": "text_field_custom2"
+      },
+      {
+        "objectName": "text_field_custom3"
+      },
+      {
+        "objectName": "text_field_custom4"
+      },
+      {
+        "objectName": "menu_bg"
+      },
+      {
+        "objectName": "Functions_Extension"
+      },
+      {
+        "objectName": "escape_reminder_label"
+      }
+    ]
+  },
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+          },
+          "parameters": [
+            "",
+            "\"main_men\"",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "menu_bg_extension::menu_bg::start_anim"
+          },
+          "parameters": [
+            "menu_bg",
+            ""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "GroupExists"
+              },
+              "parameters": [
+                "save_name_storage",
+                "save_name_header"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "temp_number1",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Repeat",
+              "repeatExpression": "slot_amount",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "temp_number1",
+                    "=",
+                    "temp_number1 + 1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PushString"
+                  },
+                  "parameters": [
+                    "save_names",
+                    "\"SAVE SLOT \"+ToString(temp_number1)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "EcrireFichierExp"
+                  },
+                  "parameters": [
+                    "save_name_storage",
+                    "save_name_header",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FileSystem::SaveVariableToJSONFileSync"
+                  },
+                  "parameters": [
+                    "save_names",
+                    "save_name_storage",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ReadNumberFromStorage"
+              },
+              "parameters": [
+                "save_name_storage",
+                "save_name_header",
+                "",
+                "save_name_header"
+              ]
+            },
+            {
+              "type": {
+                "value": "FileSystem::LoadVariableFromJSONFileSync"
+              },
+              "parameters": [
+                "save_names",
+                "save_name_storage",
+                "",
+                "yes"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "menu_bg_extension::menu_bg::anim_stopped"
+          },
+          "parameters": [
+            "menu_bg",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "menu_bg_extension::menu_bg::reload_anim"
+          },
+          "parameters": [
+            "menu_bg",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BooleanVariable"
+          },
+          "parameters": [
+            "refresh_credits_text",
+            "True",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "credits_area",
+            "Text",
+            "=",
+            "credits_text"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanVariable"
+          },
+          "parameters": [
+            "refresh_credits_text",
+            "False",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "dialog_box_extension::Dialog_Box::shown"
+          },
+          "parameters": [
+            "menu_dialog_box",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "functions_extension::get_main_menu"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "functions_extension::clear_main_menu"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "functions_extension::get_main_menu_inside"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "functions_extension::create_scene_with_number"
+                  },
+                  "parameters": [
+                    "",
+                    "functions_extension::get_old_scene()",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "functions_extension::get_main_menu_inside"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "level_objects",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::delete"
+                  },
+                  "parameters": [
+                    "text_fields",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "dialog_box_extension::Dialog_Box::delete"
+                  },
+                  "parameters": [
+                    "menu_dialog_box",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                  },
+                  "parameters": [
+                    "",
+                    "\"main_men\"",
+                    "0",
+                    "0",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "menu_bg_extension::menu_bg::reload_anim"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Escape\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if(runtimeScene._runtimeGame.getInputManager().anyKeyPressed()) {",
+                "    let character = runtimeScene._runtimeGame.getInputManager().getLastPressedKey();",
+                "    //character = String.fromCharCode(character);",
+                "    runtimeScene.getVariables().get(\"temp_number1\").setString(character);",
+                "}",
+                "runtimeScene._runtimeGame.getInputManager().clearAllPressedKeys();"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "temp_number1",
+                    "=",
+                    "27"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "functions_extension::set_main_menu"
+                  },
+                  "parameters": [
+                    "",
+                    "functions_extension::get_scene_id_change()",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "functions_extension::scene_changed"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "saved_data.current_scene_id",
+                "=",
+                "functions_extension::get_scene_id_change()"
+              ]
+            },
+            {
+              "type": {
+                "value": "functions_extension::reset_scene_change"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "functions_extension::toggle_main_menu"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "level_objects",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::delete"
+                  },
+                  "parameters": [
+                    "text_fields",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "dialog_box_extension::Dialog_Box::delete"
+                  },
+                  "parameters": [
+                    "menu_dialog_box",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    "=",
+                    "y_limit",
+                    "=",
+                    "y_limit"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "menu_bg_extension::menu_bg::stop_anim"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "saved_data.real_game_menu_id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "saved_data.current_scene_id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                  },
+                  "parameters": [
+                    "",
+                    "\"new_game\"",
+                    "0",
+                    "0",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::create"
+                  },
+                  "parameters": [
+                    "text_field_custom1",
+                    "500",
+                    "200",
+                    "600",
+                    "50",
+                    "25",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::set_text"
+                  },
+                  "parameters": [
+                    "text_field_custom1",
+                    "\"save_debug_value = \"+saved_data.debug+\" old \"+ToString(functions_extension::get_old_scene())+\" scene_change \"+ToString(functions_extension::get_scene_id_change())",
+                    "="
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "saved_data.current_scene_id",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                  },
+                  "parameters": [
+                    "",
+                    "\"save_game\"",
+                    "0",
+                    "0",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "menu_bg_extension::menu_bg::reload_anim"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "functions_extension::set_scene_back_without_request"
+                  },
+                  "parameters": [
+                    "",
+                    "saved_data.real_game_menu_id",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "temp_number1",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Repeat",
+                  "repeatExpression": "slot_amount",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "temp_number1",
+                        "=",
+                        "temp_number1 + 1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "save_load_button",
+                        "window_width / 2 - save_load_button_width / 2",
+                        "0 + (temp_number1 - 1) * save_load_button_height",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "Resizable",
+                        "=",
+                        "save_load_button_width"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "Resizable",
+                        "=",
+                        "save_load_button_height"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "=",
+                        "save_names[temp_number1-1]",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "id",
+                        "=",
+                        "temp_number1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "load",
+                        "False",
+                        "temp_number1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "saved_data.current_scene_id",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                  },
+                  "parameters": [
+                    "",
+                    "\"load_game\"",
+                    "0",
+                    "0",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "menu_bg_extension::menu_bg::reload_anim"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "functions_extension::set_scene_back_without_request"
+                  },
+                  "parameters": [
+                    "",
+                    "saved_data.real_game_menu_id",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "temp_number1",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Repeat",
+                  "repeatExpression": "slot_amount",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "temp_number1",
+                        "=",
+                        "temp_number1 + 1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "save_load_button",
+                        "window_width / 2 - save_load_button_width / 2",
+                        "0 + (temp_number1 - 1) * save_load_button_height",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "Resizable",
+                        "=",
+                        "save_load_button_width"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "Resizable",
+                        "=",
+                        "save_load_button_height"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "=",
+                        "save_names[temp_number1-1]",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "id",
+                        "=",
+                        "temp_number1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "load",
+                        "True",
+                        "temp_number1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "saved_data.current_scene_id",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                  },
+                  "parameters": [
+                    "",
+                    "\"options\"",
+                    "0",
+                    "0",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "menu_bg_extension::menu_bg::reload_anim"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::create"
+                  },
+                  "parameters": [
+                    "text_field_custom1",
+                    "500",
+                    "200",
+                    "600",
+                    "50",
+                    "25",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::create"
+                  },
+                  "parameters": [
+                    "text_field_custom2",
+                    "500",
+                    "300",
+                    "400",
+                    "50",
+                    "25",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::create"
+                  },
+                  "parameters": [
+                    "text_field_custom3",
+                    "500",
+                    "400",
+                    "400",
+                    "50",
+                    "25",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::create"
+                  },
+                  "parameters": [
+                    "text_field_custom4",
+                    "500",
+                    "500",
+                    "850",
+                    "50",
+                    "25",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::set_text"
+                  },
+                  "parameters": [
+                    "text_field_custom1",
+                    "\"save_debug_value = \"+saved_data.debug+\" old \"+ToString(functions_extension::get_old_scene())+\" scene_change \"+ToString(functions_extension::get_scene_id_change())",
+                    "="
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "functions_extension::set_scene_back_without_request"
+                  },
+                  "parameters": [
+                    "",
+                    "saved_data.real_game_menu_id",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "saved_data.current_scene_id",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                  },
+                  "parameters": [
+                    "",
+                    "\"credits\"",
+                    "0",
+                    "0",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "menu_bg_extension::menu_bg::reload_anim"
+                  },
+                  "parameters": [
+                    "menu_bg",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "refresh_credits_text",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "functions_extension::set_scene_back_without_request"
+                  },
+                  "parameters": [
+                    "",
+                    "saved_data.real_game_menu_id",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "saved_data.current_scene_id",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "saved_data.current_scene_id",
+                    "=",
+                    "3"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "save_load_button",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "current_id",
+                    "=",
+                    "save_load_button.id"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "load",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "save_load_name",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "save_load_name_save_confirm",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "save_load_name_save_cancel",
+                        ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "save_load_button",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "save_load_button",
+                            "id",
+                            "=",
+                            "current_id"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "text_field_extension::text_field_custom::create"
+                          },
+                          "parameters": [
+                            "text_field_custom1",
+                            "save_confirm_x_prefix",
+                            "save_load_button.Y()",
+                            "save_load_name_width",
+                            "save_load_name_height",
+                            "35",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "save_load_name_save_confirm",
+                            "save_confirm_x_prefix+save_load_name_width",
+                            "save_load_button.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                          },
+                          "parameters": [
+                            "save_load_name_save_confirm",
+                            "Resizable",
+                            "=",
+                            "250"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                          },
+                          "parameters": [
+                            "save_load_name_save_confirm",
+                            "Resizable",
+                            "=",
+                            "save_load_name_height"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "save_load_name_save_cancel",
+                            "save_confirm_x_prefix + save_load_name_width + save_load_name_save_confirm.Width()",
+                            "save_load_button.Y()",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                          },
+                          "parameters": [
+                            "save_load_name_save_cancel",
+                            "Resizable",
+                            "=",
+                            "250"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                          },
+                          "parameters": [
+                            "save_load_name_save_cancel",
+                            "Resizable",
+                            "=",
+                            "save_load_name_height"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "load",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "dialog_box_extension::Dialog_Box::create"
+                      },
+                      "parameters": [
+                        "menu_dialog_box",
+                        "\"Lose unsaved progress and load from the selected slot \"+ToString(current_id)+\"?\"",
+                        "window_width / 2 - menu_dialog_box.Width() / 2",
+                        "window_height / 2 - menu_dialog_box.Height() / 2",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "dialog_box_id",
+                        "=",
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "currently_saving_id",
+                        "=",
+                        "save_load_button.id"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "save_load_name_save_cancel",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name_save_confirm",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name_save_cancel",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "dialog_box_extension::Dialog_Box::delete"
+                  },
+                  "parameters": [
+                    "menu_dialog_box",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::delete"
+                  },
+                  "parameters": [
+                    "text_field_custom1",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "save_load_name_save_confirm",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name_save_confirm",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "save_load_name_save_cancel",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "text_field_extension::text_field_custom::delete"
+                  },
+                  "parameters": [
+                    "text_field_custom1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "dialog_box_extension::Dialog_Box::create"
+                  },
+                  "parameters": [
+                    "menu_dialog_box",
+                    "\"Format and save to the selected slot \"+ToString(current_id)+\"?\"",
+                    "window_width / 2 - menu_dialog_box.Width() / 2",
+                    "window_height / 2 - menu_dialog_box.Height() / 2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "dialog_box_id",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "currently_saving_id",
+                    "=",
+                    "current_id"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "back_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "functions_extension::set_main_menu"
+              },
+              "parameters": [
+                "",
+                "0",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "new_game_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "functions_extension::create_scene_with_number"
+              },
+              "parameters": [
+                "",
+                "1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "save_game_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "functions_extension::create_scene_with_number"
+              },
+              "parameters": [
+                "",
+                "2",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "load_game_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "functions_extension::create_scene_with_number"
+              },
+              "parameters": [
+                "",
+                "3",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "options_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "functions_extension::create_scene_with_number"
+              },
+              "parameters": [
+                "",
+                "4",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "credits_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "functions_extension::create_scene_with_number"
+              },
+              "parameters": [
+                "",
+                "5",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "help_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "level_objects",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "text_field_extension::text_field_custom::delete"
+              },
+              "parameters": [
+                "text_fields",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "dialog_box_extension::Dialog_Box::delete"
+              },
+              "parameters": [
+                "menu_dialog_box",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"help\"",
+                "0",
+                "0",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "quit_game_button",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "dialog_box_extension::Dialog_Box::create"
+              },
+              "parameters": [
+                "menu_dialog_box",
+                "\"Lose unsaved progress and quit the game?\"",
+                "window_width / 2 - menu_dialog_box.Width() / 2",
+                "window_height / 2 - menu_dialog_box.Height() / 2",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "dialog_box_id",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "dialog_box_extension::Dialog_Box::shown"
+          },
+          "parameters": [
+            "menu_dialog_box",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "dialog_box_extension::Dialog_Box::is_yes"
+              },
+              "parameters": [
+                "menu_dialog_box",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "dialog_box_id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Quit"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "dialog_box_id",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "save_names[currently_saving_id-1]",
+                        "=",
+                        "text_field_custom1.get_text()+\" \"+ToString(currently_saving_id)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FileSystem::SaveVariableToJSONFileSync"
+                      },
+                      "parameters": [
+                        "save_names",
+                        "save_name_storage",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "saved_data.debug",
+                        "=",
+                        "currently_saving_id"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FileSystem::SaveVariableToJSONFileSync"
+                      },
+                      "parameters": [
+                        "saved_data",
+                        "save_name_storage+ToString(currently_saving_id)",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "save_load_button",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "id",
+                        "=",
+                        "currently_saving_id"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+                      },
+                      "parameters": [
+                        "save_load_button",
+                        "=",
+                        "save_names[currently_saving_id-1]",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "dialog_box_extension::Dialog_Box::delete"
+                      },
+                      "parameters": [
+                        "menu_dialog_box",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "dialog_box_id",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FileSystem::LoadVariableFromJSONFileSync"
+                  },
+                  "parameters": [
+                    "saved_data",
+                    "save_name_storage+ToString(currently_saving_id)",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "dialog_box_extension::Dialog_Box::delete"
+                  },
+                  "parameters": [
+                    "menu_dialog_box",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "dialog_box_extension::Dialog_Box::is_no"
+              },
+              "parameters": [
+                "menu_dialog_box",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "dialog_box_id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "dialog_box_extension::Dialog_Box::delete"
+                  },
+                  "parameters": [
+                    "menu_dialog_box",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "dialog_box_id",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "dialog_box_extension::Dialog_Box::delete"
+                  },
+                  "parameters": [
+                    "menu_dialog_box",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "dialog_box_id",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "dialog_box_extension::Dialog_Box::delete"
+                  },
+                  "parameters": [
+                    "menu_dialog_box",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "MouseButtonFromTextReleased"
+          },
+          "parameters": [
+            "",
+            "\"Left\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "text_field_extension::text_field_custom::disable_focus"
+          },
+          "parameters": [
+            "text_fields",
+            ""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "text_field_extension::text_field_custom::is_hoovered"
+              },
+              "parameters": [
+                "text_fields",
+                "CursorX()",
+                "CursorY()",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "text_field_extension::text_field_custom::set_focus"
+              },
+              "parameters": [
+                "text_fields",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "text_field_extension::text_field_custom::get_focus"
+          },
+          "parameters": [
+            "text_fields",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "AnyKeyPressed"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "if(runtimeScene._runtimeGame.getInputManager().anyKeyPressed()) {",
+            "    let character = runtimeScene._runtimeGame.getInputManager().getLastPressedKey();",
+            "    if (character == 8) {",
+            "        runtimeScene.getVariables().get(\"temp_string1\").setString(\"backspace\");",
+            "    } else if (character == 13) {",
+            "        runtimeScene.getVariables().get(\"temp_string1\").setString(\"\");",
+            "    } else {",
+            "        character = String.fromCharCode(character);",
+            "        runtimeScene.getVariables().get(\"temp_string1\").setString(character);",
+            "    }",
+            "}",
+            "runtimeScene._runtimeGame.getInputManager().clearAllPressedKeys();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "temp_string1",
+                "=",
+                "\"backspace\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "text_field_extension::text_field_custom::set_text"
+              },
+              "parameters": [
+                "text_fields",
+                "SubStr(text_fields.get_text(),0,StrLength(text_fields.get_text())-1)",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "temp_string1",
+                "=",
+                "\"backspace\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "text_field_extension::text_field_custom::set_text"
+              },
+              "parameters": [
+                "text_fields",
+                "text_fields.get_text()+temp_string1",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "bg_layer",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Ambient Hemisphere Light",
+          "doubleParameters": {
+            "elevation": 40,
+            "intensity": 0.33,
+            "rotation": 300
+          },
+          "stringParameters": {
+            "groundColor": "127;127;127",
+            "skyColor": "255;255;255",
+            "top": "Z+"
+          },
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Scene3D::DirectionalLight",
+          "name": "3D Sun Light",
+          "doubleParameters": {
+            "distanceFromCamera": 1500,
+            "elevation": 40,
+            "frustumSize": 4000,
+            "intensity": 0.75,
+            "minimumShadowBias": 0,
+            "rotation": 300
+          },
+          "stringParameters": {
+            "color": "255;255;255",
+            "shadowQuality": "medium",
+            "top": "Z+"
+          },
+          "booleanParameters": {
+            "isCastingShadow": true
+          }
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Ambient Hemisphere Light",
+          "doubleParameters": {
+            "elevation": 40,
+            "intensity": 0.33,
+            "rotation": 300
+          },
+          "stringParameters": {
+            "groundColor": "127;127;127",
+            "skyColor": "255;255;255",
+            "top": "Z+"
+          },
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Scene3D::DirectionalLight",
+          "name": "3D Sun Light",
+          "doubleParameters": {
+            "distanceFromCamera": 1500,
+            "elevation": 40,
+            "frustumSize": 4000,
+            "intensity": 0.75,
+            "minimumShadowBias": 0,
+            "rotation": 300
+          },
+          "stringParameters": {
+            "color": "255;255;255",
+            "shadowQuality": "medium",
+            "top": "Z+"
+          },
+          "booleanParameters": {
+            "isCastingShadow": true
+          }
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "dialog_layer",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Ambient Hemisphere Light",
+          "doubleParameters": {
+            "elevation": 40,
+            "intensity": 0.33,
+            "rotation": 300
+          },
+          "stringParameters": {
+            "groundColor": "127;127;127",
+            "skyColor": "255;255;255",
+            "top": "Z+"
+          },
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Scene3D::DirectionalLight",
+          "name": "3D Sun Light",
+          "doubleParameters": {
+            "distanceFromCamera": 1500,
+            "elevation": 40,
+            "frustumSize": 4000,
+            "intensity": 0.75,
+            "minimumShadowBias": 0,
+            "rotation": 300
+          },
+          "stringParameters": {
+            "color": "255;255;255",
+            "shadowQuality": "medium",
+            "top": "Z+"
+          },
+          "booleanParameters": {
+            "isCastingShadow": true
+          }
+        }
+      ]
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "Animation",
+      "type": "AnimatableCapability::AnimatableBehavior"
+    },
+    {
+      "name": "Effect",
+      "type": "EffectCapability::EffectBehavior"
+    },
+    {
+      "name": "Flippable",
+      "type": "FlippableCapability::FlippableBehavior"
+    },
+    {
+      "name": "HorizontalTiledSpriteParallax",
+      "type": "Parallax::HorizontalTiledSpriteParallax"
+    },
+    {
+      "name": "Opacity",
+      "type": "OpacityCapability::OpacityBehavior"
+    },
+    {
+      "name": "Resizable",
+      "type": "ResizableCapability::ResizableBehavior"
+    },
+    {
+      "name": "Scale",
+      "type": "ScalableCapability::ScalableBehavior"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
+    }
+  ]
+}
